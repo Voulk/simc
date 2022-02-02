@@ -1,5 +1,5 @@
 // Spell text, wow build 9.2.0.42069
-static const std::array<spelltext_data_t, 15981> __ptr_spelltext_data { {
+static const std::array<spelltext_data_t, 15983> __ptr_spelltext_data { {
   {     17, "Shields an ally for $d, absorbing $<shield> damage.  You cannot shield the target again for $6788d.", "Absorbs $w1 damage.", 0 },
   {     53, "Stab the target, causing ${$s2*$<mult>} Physical damage. Damage increased by $s4% when you are behind your target$?s319949[, and critical strikes apply Find Weakness for $319949s1 sec][].\r\n\r\n|cFFFFFFFFAwards $s3 combo $lpoint:points;.|r", 0, 0 },
   {     56, "Stuns target for $d.", "Stunned.", 0 },
@@ -12664,7 +12664,6 @@ static const std::array<spelltext_data_t, 15981> __ptr_spelltext_data { {
   { 311648, "A heavy mist surrounds you for $d, increasing your Dodge by $s2%. \r\n\r\nDeals $311730s1 Shadow damage every $t1 sec to enemies within $311730A1 yds. Every time it deals damage you gain ${$312546s1/10} Runic Power, up to a maximum of ${$312546s1/10*$s3} Runic Power. Deals reduced damage beyond $s5 targets.", "Surrounded by a mist of Anima, increasing your chance to Dodge by $s2% and dealing $311730s1 Shadow damage every $t1 sec to nearby enemies.", "Venthyr" },
   { 311649, "Allows opening of locks that require up to $s1 lockpicking skill.  The scroll is consumed in the process.", 0, 0 },
   { 311685, "Attune yourself to the energies of the targeted Castle Nathria raid boss, increasing your Versatility by $311500s1 when fighting that boss. This effect lasts for an entire week.\r\n\r\nYou can only use one Vantus Rune per week.", 0, 0 },
-  { 311724, "Grants the title \"Veteran of the Fourth War\".", 0, 0 },
   { 311730, "$@spelldesc311648", 0, 0 },
   { 311947, 0, 0, "Azerite Essence" },
   { 312049, "Consumes a sip of Nomi's Vintage, delivering a fiery burst to the senses! Only useable within Zandalar, Kul Tiras, and Nazjatar.", "It burns!", 0 },
@@ -15614,8 +15613,11 @@ static const std::array<spelltext_data_t, 15981> __ptr_spelltext_data { {
   { 362620, "Increases Agility by $235007s1 for $d.", "Increases Agility by $235007s1.", 0 },
   { 362628, "Steals $s1 life from target enemy.", 0, 0 },
   { 362629, "Your attacks have a chance to steal $362628s1 life from the enemy.", 0, 0 },
+  { 362699, "Protects from spell interruption and crowd control effects.", "Immune to interrupt and crowd control effects.", 0 },
   { 362986, "Open your Companions page and select a companion to raise their level to $s1.", 0, 0 },
   { 363041, "A swig of strong brew that coalesces purified chi escaping your body into a celestial guard, absorbing $<absorb> damage.", "Absorbs $w1 damage.", 0 },
+  { 363117, "Activate the Broker defenses, protecting yourself from spell interruption and crowd control effects. The defenses withstand up to $s1 $Leffect:effects; and persist for $362699d.", 0, 0 },
+  { 363121, "Duration of incoming crowd control effects increased by $s1%. Does not stack with similar effects. When affected, protects from the next spell interruption and crowd control effect, persisting for $362699d.", 0, "PvP Talent" },
   { 363327, "Activate the dimensional translators to cross a great distance in outdoor Shadowlands zones.\r\n\r\nThis ability grows more powerful as you research the Cyphers of the First Ones.", 0, 0 },
   { 363328, "Greatly reduces fall damage taken in outdoor Shadowlands zones.", 0, 0 },
   { 363329, "Increases your movement and mounted speed in outdoor Shadowlands zones by $?pc94626[${$s4+$s3*5}]?pc94651[${$s4+$s3*4}]?pc94650[${$s4+$s3*3}]?pc64649[${$s4+$s3*2}]?pc94746[${$s4+$s3}][$s4]%.\r\n\r\nThis ability grows more powerful as you research the Cyphers of the First Ones.", 0, 0 },
