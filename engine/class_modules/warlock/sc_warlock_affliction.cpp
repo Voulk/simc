@@ -106,17 +106,16 @@ struct shadow_bolt_t : public affliction_spell_t
   void impact( action_state_t* s ) override
   {
     affliction_spell_t::impact( s );
+
     if ( result_is_hit( s->result ) )
     {
-      if ( !p()->min_version_check( VERSION_9_1_0 ) || p()->talents.shadow_embrace->ok() )
-      {
-        // Add passive check
+      if ( p()->talents.shadow_embrace->ok() )
         td( s->target )->debuffs_shadow_embrace->trigger();
-      }
 
       if ( p()->sets->has_set_bonus( WARLOCK_AFFLICTION, T28, B4 ) )
       {        
         auto tdata = this->td( s->target );
+        // TOFIX - As of 2022-02-03 PTR, the bonus appears to still be only checking that *any* target has these dots. May need to implement this behavior.
         bool tierDotsActive = tdata->dots_agony->is_ticking()
                            && tdata->dots_corruption->is_ticking()
                            && tdata->dots_unstable_affliction->is_ticking();
@@ -128,6 +127,9 @@ struct shadow_bolt_t : public affliction_spell_t
         }
       }
     }
+
+    if ( p()->legendary.shard_of_annihilation.ok() )
+      p()->buffs.shard_of_annihilation->decrement();
   }
 
   double action_multiplier() const override
@@ -154,24 +156,21 @@ struct shadow_bolt_t : public affliction_spell_t
     return m;
   }
 
-  double composite_crit_chance_multiplier() const override
+  double composite_crit_chance() const override
   {
-    double m = affliction_spell_t::composite_crit_chance_multiplier();
+    double c = affliction_spell_t::composite_crit_chance();
 
-    if ( p()->legendary.shard_of_annihilation.ok() )
-    {
-      //PTR 2021-06-19: "Critical Strike chance increased by 100%" appears to be guaranteeing crits
-      m += p()->buffs.shard_of_annihilation->data().effectN( 1 ).percent();
-    }
+    if ( p()->buffs.shard_of_annihilation->check() )
+      c += p()->buffs.shard_of_annihilation->data().effectN( 1 ).percent();
 
-    return m;
+    return c;
   }
 
   double composite_crit_damage_bonus_multiplier() const override
   {
     double m = affliction_spell_t::composite_crit_damage_bonus_multiplier();
 
-    if ( p()->legendary.shard_of_annihilation.ok() )
+    if ( p()->buffs.shard_of_annihilation->check() )
       m += p()->buffs.shard_of_annihilation->data().effectN( 2 ).percent();
 
     return m;
@@ -189,9 +188,6 @@ struct shadow_bolt_t : public affliction_spell_t
       p()->buffs.nightfall->decrement();
 
     p()->buffs.decimating_bolt->decrement();
-
-    if ( p()->legendary.shard_of_annihilation.ok() )
-      p()->buffs.shard_of_annihilation->decrement();
   }
 };
 
@@ -411,9 +407,7 @@ struct summon_darkglare_t : public affliction_spell_t
     parse_options( options_str );
     harmful = may_crit = may_miss = false;
 
-    if ( !p->min_version_check( VERSION_9_1_0 ) )
-      cooldown->duration += timespan_t::from_millis( p->talents.dark_caller->effectN( 1 ).base_value() );
-    else if ( p->spec.summon_darkglare_2->ok() )
+  if ( p->spec.summon_darkglare_2->ok() )
       cooldown->duration += timespan_t::from_millis( p->spec.summon_darkglare_2->effectN( 1 ).base_value() );
   }
 
@@ -556,11 +550,15 @@ struct seed_of_corruption_t : public affliction_spell_t
 // 9.2 Tier Set
 struct deliberate_corruption_t : public affliction_spell_t
 {
-  deliberate_corruption_t( warlock_t* p)
-    : affliction_spell_t( "deliberate_corruption", p, p->find_spell(367831) )
+  deliberate_corruption_t( warlock_t* p )
+    : affliction_spell_t( "deliberate_corruption", p, p->find_spell( 367831 ) )
   {
     background      = true;
     affected_by_woc = false;
+    
+    // 2022-02-03 PTR - Deliberate Corruption was changed to a single tick DoT, presumably to automatically pick up this modifier in-game
+    if ( p->talents.absolute_corruption->ok() )
+      base_td_multiplier *= 1.0 + p->talents.absolute_corruption->effectN( 2 ).percent();
   }
 };
 
@@ -593,7 +591,7 @@ struct malefic_rapture_t : public affliction_spell_t
 
         if ( p()->sets->has_set_bonus( WARLOCK_AFFLICTION, T28, B2 ) )
         {
-          m *= 1.00 + p()->sets->set( WARLOCK_AFFLICTION, T28, B2 )->effectN( 1 ).percent();
+          m *= 1.0 + p()->sets->set( WARLOCK_AFFLICTION, T28, B2 )->effectN( 1 ).percent();
         }
 
         return m;
@@ -601,16 +599,29 @@ struct malefic_rapture_t : public affliction_spell_t
 
       void impact ( action_state_t* s ) override
       {
-        if ( result_is_hit( s->result ) && p()->talents.absolute_corruption->ok() && p()->sets->has_set_bonus( WARLOCK_AFFLICTION, T28, B2 ) )
-        { 
-          auto td = this->td( s->target );
-          if (td->dots_corruption->is_ticking())
+        affliction_spell_t::impact( s );
+
+        if ( p()->sets->has_set_bonus( WARLOCK_AFFLICTION, T28, B2 ) )
+        {
+          timespan_t dot_extension =  p()->sets->set( WARLOCK_AFFLICTION, T28, B2 )->effectN( 2 ).time_value() * 1000;
+          warlock_td_t* td = p()->get_target_data( s->target );
+
+          td->dots_agony->adjust_duration( dot_extension );
+          td->dots_unstable_affliction->adjust_duration(dot_extension);
+
+          if ( !p()->talents.absolute_corruption->ok() )
           {
-            deliberate_corruption->execute_on_target( s->target );
+            td->dots_corruption->adjust_duration( dot_extension );
+          }
+          else
+          {
+            auto td = this->td( s->target );
+            if ( td->dots_corruption->is_ticking() )
+            {
+              deliberate_corruption->execute_on_target( s->target );
+            }
           }
         }
-
-        affliction_spell_t::impact( s );
       }
 
       void execute() override
@@ -639,20 +650,22 @@ struct malefic_rapture_t : public affliction_spell_t
 
     double cost() const override
     {
-      if (p()->buffs.calamitous_crescendo->check())
-        return 0.0;
+      double c = affliction_spell_t::cost();
+
+      if ( p()->buffs.calamitous_crescendo->check() )
+        c *= 1.0 + p()->buffs.calamitous_crescendo->data().effectN( 4 ).percent();
         
-      return warlock_spell_t::cost();      
+      return c;      
     }
 
     timespan_t execute_time() const override
     {
-      if ( p()->buffs.calamitous_crescendo->check() )
-      {
-        return 0_ms;
-      }
+      timespan_t t = affliction_spell_t::execute_time();
 
-      return affliction_spell_t::execute_time();
+      if ( p()->buffs.calamitous_crescendo->check() )
+        t *= 1.0 + p()->buffs.calamitous_crescendo->data().effectN( 3 ).percent();
+
+      return t;
     }
 
     bool ready() override
@@ -675,16 +688,6 @@ struct malefic_rapture_t : public affliction_spell_t
       }
 
       p()->buffs.calamitous_crescendo->expire();
-
-      if (p()->sets->has_set_bonus( WARLOCK_AFFLICTION, T28, B2 ) )
-      {
-        timespan_t dot_extension =  p()->sets->set( WARLOCK_AFFLICTION, T28, B2 )->effectN( 2 ).time_value() * 1000;
-        warlock_td_t* td = p()->get_target_data( target );
-
-        td->dots_agony->adjust_duration( dot_extension );
-        td->dots_corruption->adjust_duration( dot_extension );
-        td->dots_unstable_affliction->adjust_duration( dot_extension );
-      }
     }
 
     size_t available_targets( std::vector<player_t*>& tl ) const override
@@ -728,14 +731,12 @@ struct drain_soul_t : public affliction_spell_t
     affliction_spell_t::tick( d );
     if ( result_is_hit( d->state->result ) )
     {
-      if ( !p()->min_version_check( VERSION_9_1_0 ) || p()->talents.shadow_embrace->ok() )
-      {
-          // TODO - Add passive check
-          td( d->target )->debuffs_shadow_embrace->trigger();
-      }
+      if ( p()->talents.shadow_embrace->ok() )
+        td( d->target )->debuffs_shadow_embrace->trigger();
 
       if ( p()->sets->has_set_bonus( WARLOCK_AFFLICTION, T28, B4 ) )
       {
+        // TOFIX - As of 2022-02-03 PTR, the bonus appears to still be only checking that *any* target has these dots. May need to implement this behavior.
         bool tierDotsActive = td( d->target )->dots_agony->is_ticking() 
                            && td( d->target )->dots_corruption->is_ticking()
                            && td( d->target )->dots_unstable_affliction->is_ticking();
@@ -766,24 +767,21 @@ struct drain_soul_t : public affliction_spell_t
     return m;
   }
 
-  double composite_crit_chance_multiplier() const override
+  double composite_crit_chance() const override
   {
-    double m = affliction_spell_t::composite_crit_chance_multiplier();
+    double c = affliction_spell_t::composite_crit_chance();
 
-    if ( p()->legendary.shard_of_annihilation.ok() )
-    {
-      //PTR 2021-06-19: "Critical Strike chance increased by 100%" appears to be guaranteeing crits
-      m += p()->buffs.shard_of_annihilation->data().effectN( 3 ).percent();
-    }
+    if ( p()->buffs.shard_of_annihilation->check() )
+      c += p()->buffs.shard_of_annihilation->data().effectN( 3 ).percent();
 
-    return m;
+    return c;
   }
 
   double composite_crit_damage_bonus_multiplier() const override
   {
     double m = affliction_spell_t::composite_crit_damage_bonus_multiplier();
 
-    if ( p()->legendary.shard_of_annihilation.ok() )
+    if ( p()->buffs.shard_of_annihilation->check() )
       m += p()->buffs.shard_of_annihilation->data().effectN( 4 ).percent();
 
     return m;
@@ -816,9 +814,6 @@ struct haunt_t : public affliction_spell_t
     {
       td( s->target )->debuffs_haunt->trigger();
     }
-
-    if ( !p()->min_version_check( VERSION_9_1_0 ) )
-      td( s->target )->debuffs_shadow_embrace->trigger();
   }
 };
 
@@ -1229,8 +1224,8 @@ void warlock_t::create_apl_affliction()
   necro->add_action( "use_item,name=sunblood_amethyst,if=variable.trinket_delay<6" ); 
   necro->add_action( "use_item,name=soulletting_ruby,if=variable.trinket_delay<8" );
   necro->add_action( "use_item,name=name=shadowed_orb_of_torment,if=variable.trinket_delay<4" );
-  necro->add_action( "phantom_singularity,if=talent.haunt&variable.dots_ticking", "If the player is using Haunt, fire PS on cooldown then follow with DB" );
-  necro->add_action( "decimating_bolt,if=talent.haunt&cooldown.phantom_singularity.remains>0" );
+  necro->add_action( "phantom_singularity,if=!talent.shadow_embrace&variable.dots_ticking", "If the player is using Haunt or Gosac, fire PS on cooldown then follow with DB" );
+  necro->add_action( "decimating_bolt,if=!talent.shadow_embrace&cooldown.phantom_singularity.remains>0" );
   necro->add_action( "decimating_bolt,if=talent.shadow_embrace&variable.dots_ticking", "If the player is using SE, fire DB on cooldown then following with PS" );
   necro->add_action( "phantom_singularity,if=talent.shadow_embrace&cooldown.decimating_bolt.remains>0" );
   necro->add_action( "unstable_affliction,if=dot.unstable_affliction.remains<6" );
