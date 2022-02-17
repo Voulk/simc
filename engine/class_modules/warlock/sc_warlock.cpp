@@ -265,9 +265,8 @@ struct impending_catastrophe_t : public warlock_spell_t
     {
       double m = warlock_spell_t::composite_ta_multiplier( s );
 
-      // PTR 2022-01-25 Legendary now capped to a maximum of 10 targets 
-      // TODO: As the change is confirmed, remove PTR check
-      int clamped_impact_count = p()->min_version_check( VERSION_PTR ) ? std::min(impact_count, 10) : impact_count;
+      // PTR 2022-01-25 Legendary now capped to a maximum of 10 targets
+      int clamped_impact_count = p()->min_version_check( VERSION_9_2_0 ) ? std::min(impact_count, 10) : impact_count;
 
       //PTR 2022-01-26 Legendary is still multiplying these bonuses together, though the tooltip implies they should add
       if ( p()->bugs )
@@ -489,18 +488,6 @@ struct decimating_bolt_t : public warlock_spell_t
 
   void impact( action_state_t* s ) override
   {
-    //TOCHECK: the formulae for Decimating Bolt bonus damage does not appear in spell data, and should be
-    //checked regularly to ensure accuracy
-    double value = p()->buffs.decimating_bolt->default_value - 0.01 * s->target->health_percentage();
-    if ( p()->talents.fire_and_brimstone->ok() )
-      value *= 0.4;
-    p()->buffs.decimating_bolt->trigger( 3, value );
-    
-    if ( p()->legendary.shard_of_annihilation.ok() )
-    {
-      //Note: For Drain Soul, 3 stacks appear to be triggered but all are removed when the Decimating Bolt buff is
-      p()->buffs.shard_of_annihilation->trigger( 3 );
-    }
 
     warlock_spell_t::impact( s );
     
@@ -514,6 +501,25 @@ struct decimating_bolt_t : public warlock_spell_t
       e->pulse_state->persistent_multiplier *= base_aoe_multiplier;
 
   };
+
+  void execute() override
+  {
+    //TOCHECK: the formulae for Decimating Bolt bonus damage does not appear in spell data, and should be
+    //checked regularly to ensure accuracy
+    // TODO: Need to check the behavior of havoc decimating bolt, and which strength of buff is given.
+    double value = p()->buffs.decimating_bolt->default_value - 0.01 * p()->target->health_percentage();
+    if ( p()->talents.fire_and_brimstone->ok() )
+      value *= 0.4;
+    p()->buffs.decimating_bolt->trigger( 3, value );
+    
+    if ( p()->legendary.shard_of_annihilation.ok() )
+    {
+      //Note: For Drain Soul, 3 stacks appear to be triggered but all are removed when the Decimating Bolt buff is
+      p()->buffs.shard_of_annihilation->trigger( 3 );
+    }
+
+    warlock_spell_t::execute();
+  }
 
 };
 
@@ -740,13 +746,9 @@ void warlock_td_t::target_demise()
 
   if ( debuffs_shadowburn->check() )
   {
-    if ( warlock.min_version_check( VERSION_9_1_0 ) )
-    {
-      warlock.sim->print_log( "Player {} demised. Warlock {} refunds one charge of Shadowburn.", target->name(),
-                            warlock.name() );
+    warlock.sim->print_log( "Player {} demised. Warlock {} refunds one charge of Shadowburn.", target->name(), warlock.name() );
       
-      warlock.cooldowns.shadowburn->reset( true );
-    }
+    warlock.cooldowns.shadowburn->reset( true );
    
     warlock.sim->print_log( "Player {} demised. Warlock {} gains 1 shard from Shadowburn.", target->name(), warlock.name() );
 
@@ -884,17 +886,10 @@ double warlock_t::composite_player_target_multiplier( player_t* target, school_e
   {
     if ( td->debuffs_haunt->check() )
       m *= 1.0 + td->debuffs_haunt->check_value();
-	  
-	if ( !min_version_check( VERSION_9_1_0 ) )
-    {
-      m *= 1.0 + ( ( td->debuffs_shadow_embrace->check_value() ) * ( 1 + conduit.cold_embrace.percent() )
-           * td->debuffs_shadow_embrace->check() );
-    }
 
-    if ( min_version_check( VERSION_9_1_0 ) && talents.shadow_embrace->ok() )
-    {
+    if ( talents.shadow_embrace->ok() )
       m *= 1.0 + td->debuffs_shadow_embrace->check_stack_value();
-    }
+
   }
 
   if ( specialization() == WARLOCK_DESTRUCTION )
@@ -946,9 +941,6 @@ double warlock_t::composite_player_pet_damage_multiplier( const action_state_t* 
 double warlock_t::composite_player_target_pet_damage_multiplier( player_t* target, bool guardian ) const
 {
   double m = player_t::composite_player_target_pet_damage_multiplier( target, guardian );
-
-  if ( !min_version_check( VERSION_9_1_0 ) )
-    return m;
 
   const warlock_td_t* td = get_target_data( target );
 
@@ -1068,8 +1060,8 @@ action_t* warlock_t::create_action_warlock( util::string_view action_name, util:
     return new summon_main_pet_t( "felhunter", this );
   if ( action_name == "summon_felguard" )
     return new summon_main_pet_t( "felguard", this );
-  if ( action_name == "summon_succubus" )
-    return new summon_main_pet_t( "succubus", this );
+  if ( action_name == "summon_sayaad" )
+    return new summon_main_pet_t( "sayaad", this );
   if ( action_name == "summon_voidwalker" )
     return new summon_main_pet_t( "voidwalker", this );
   if ( action_name == "summon_imp" )
@@ -1210,7 +1202,7 @@ void warlock_t::init_spells()
   spec.nethermancy = find_spell( 86091 );
   spec.demonic_embrace = find_spell( 288843 );
 
-  version_9_1_0_data = find_spell( 356342 ); //For 9.1 PTR version checking, Shard of Annihilation data
+  version_9_2_0_data = find_spell( 363953 ); // For 9.2 PTR version checking, Calamitous Crescendo data
 
   // Specialization Spells
   spec.immolate         = find_specialization_spell( "Immolate" );
@@ -1382,6 +1374,7 @@ void warlock_t::apl_precombat()
   {
     //tested different values, even with gfg/vf its better to summon tyrant sooner in the opener
     precombat->add_action( "variable,name=first_tyrant_time,op=set,value=10" );
+    precombat->add_action( "variable,name=use_bolt_timings,op=set,value=runeforge.balespiders_burning_core&runeforge.shard_of_annihilation" );
     precombat->add_action( "use_item,name=shadowed_orb_of_torment" );
     precombat->add_action( "demonbolt" );
   }
@@ -1631,8 +1624,9 @@ bool warlock_t::min_version_check( version_check_e version ) const
   {
     case VERSION_PTR:
       return is_ptr();
+    case VERSION_9_2_0:
+      return !( version_9_2_0_data == spell_data_t::not_found() );
     case VERSION_9_1_0:
-      return !( version_9_1_0_data == spell_data_t::not_found() );
     case VERSION_9_0_5:
     case VERSION_9_0_0:
     case VERSION_ANY:
@@ -1717,8 +1711,8 @@ pet_t* warlock_t::create_main_pet( util::string_view pet_name, util::string_view
     return new pets::base::felhunter_pet_t( this, pet_name );
   if ( pet_name == "imp" )
     return new pets::base::imp_pet_t( this, pet_name );
-  if ( pet_name == "succubus" )
-    return new pets::base::succubus_pet_t( this, pet_name );
+  if ( pet_name == "sayaad" || pet_name == "incubus" || pet_name == "succubus" )
+    return new pets::base::sayaad_pet_t( this, pet_name );
   if ( pet_name == "voidwalker" )
     return new pets::base::voidwalker_pet_t( this, pet_name );
   if ( specialization() == WARLOCK_DEMONOLOGY )

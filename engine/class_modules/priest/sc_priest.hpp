@@ -560,6 +560,8 @@ public:
   int shadow_weaving_active_dots( const player_t* target, const unsigned int spell_id ) const;
   double shadow_weaving_multiplier( const player_t* target, const unsigned int spell_id ) const;
   void trigger_unholy_transfusion_healing();
+  event_t* t28_4pc_summon_event;
+  timespan_t t28_4pc_summon_duration;
 
   std::string default_potion() const override;
   std::string default_flask() const override;
@@ -922,6 +924,11 @@ struct priest_spell_t : public priest_action_t<spell_t>
       tdm *= priest().shadow_weaving_multiplier( t, spell_id );
     }
 
+    if ( priest().hungering_void_active( t ) )
+    {
+      tdm *= ( 1 + priest().talents.hungering_void_buff->effectN( 1 ).percent() );
+    }
+
     return tdm;
   }
 
@@ -932,6 +939,11 @@ struct priest_spell_t : public priest_action_t<spell_t>
     if ( affected_by_shadow_weaving )
     {
       ttm *= priest().shadow_weaving_multiplier( t, id );
+    }
+
+    if ( priest().hungering_void_active( t ) )
+    {
+      ttm *= ( 1 + priest().talents.hungering_void_buff->effectN( 1 ).percent() );
     }
 
     return ttm;

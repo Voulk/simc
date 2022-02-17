@@ -1,4 +1,4 @@
-SimulationCraft 915-01 for World of Warcraft 9.1.5.42010 Live (hotfix 2022-01-28/42010, git build shadowlands 9fcec2a45d)
+SimulationCraft 915-01 for World of Warcraft 9.1.5.42010 Live (hotfix 2022-01-28/42010)
 Name             : Block (desc=Passive) (id=107) [Passive] 
 Class            : Warrior, Paladin, Shaman
 School           : Physical
@@ -39,7 +39,8 @@ Attributes       : ........ ........ x....... ........   .......x ........ .....
 Effects          :
 #1 (id=149)      : Dispel (38)
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Misc Value: 1 | Target: Enemy (6)
-Description      : Purges the enemy target, removing $m1 beneficial Magic $leffect:effects;.$?(s147762&s51530)
+Description      : Purges the enemy target, removing $m1 beneficial Magic $leffect:effects;.$?(s147762&s51530)
+
 [ Successfully purging a target grants a stack of Maelstrom Weapon.][]
 
 Name             : Earth Shield (id=379) [Spell Family (11)] 
@@ -97,8 +98,10 @@ Effects          :
                    Family Flags: 41
 #2 (id=756953)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Friend (21)
-Description      : Protects the target with an earthen shield, increasing your healing on them by $s1% and healing them for ${$379s1*(1+$s1/100)} when they take damage. This heal can only occur once every few seconds. Maximum $n charges.
-
+Description      : Protects the target with an earthen shield, increasing your healing on them by $s1% and healing them for ${$379s1*(1+$s1/100)} when they take damage. This heal can only occur once every few seconds. Maximum $n charges.
+
+
+
 Earth Shield can only be placed on one target at a time. Only one Elemental Shield can be active on the Shaman at a time.
 Tooltip          : Heals for ${$w2*(1+$w1/100)} upon taking damage.
 
@@ -189,7 +192,8 @@ Effects          :
 #5 (id=250398)   : Apply Aura (6) | Unknown(191)
                    Base Value: 1000 | Scaled Value: 1000 | PvP Coefficient: 1.00000 | Target: Self (1)
 Description      : Turn into a Ghost Wolf, increasing movement speed by $s2% and preventing movement speed from being reduced below $s3%.
-Tooltip          : Increases movement speed by $w2%.$?$w3!=0[
+Tooltip          : Increases movement speed by $w2%.$?$w3!=0[
+
 Less hindered by effects that reduce movement speed.][]
 
 Name             : Bloodlust (id=2825) [Spell Family (11)] 
@@ -216,8 +220,10 @@ Effects          :
                    Base Value: 30 | Scaled Value: 30 | SP Coefficient: 0.25000 | PvP Coefficient: 1.00000 | Radius: 50000 yards | Target: Raid Members (56)
 #2 (id=857)      : Apply Aura (6) | Scale% (Stacking) (61)
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000 | Radius: 50000 yards | Target: Raid Members (56)
-Description      : Increases haste by $s1% for all party and raid members for $d.
-
+Description      : Increases haste by $s1% for all party and raid members for $d.
+
+
+
 Allies receiving this effect will become Sated and unable to benefit from Bloodlust or Time Warp again for $57724d.
 Tooltip          : Haste increased by $w1%.
 
@@ -269,9 +275,12 @@ Effects          :
 #1 (id=1925)     : Summon (28)
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000 | Misc Value: 3527 | Misc Value 2: 0xd4a | Target: Water Totem (42)
 Description      : Summons a totem at your feet for $d that heals $?s147074[two injured party or raid members][an injured party or raid member] within $52042A1 yards for $52042s1 every $5672t1 sec.
-Variables        : $purification=$?s16213[${1.95}][${1.0}]
-$soothe=$?s16205[${1.50}]?s16187[${1.25}][${1.0}]
-$rushing=$?s147074[${1.15}][${1.0}]
+Variables        : $purification=$?s16213[${1.95}][${1.0}]
+
+$soothe=$?s16205[${1.50}]?s16187[${1.25}][${1.0}]
+
+$rushing=$?s147074[${1.15}][${1.0}]
+
 $bonus=${$<purification>*$<soothe>*$<rushing>*(1+$@versadmg)}
 
 Name             : Healing Stream (id=5672) [Spell Family (11)] 
@@ -377,8 +386,10 @@ Attributes       : ........ ........ x.x..... ........   ........ ........ .....
 Effects          :
 #1 (id=3248)     : School Damage (2): nature
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 2.73000 | PvP Coefficient: 0.90000 | Target: Enemy (6)
-Description      : Instantly shocks the target with concussive force, causing $s1 Nature damage.$?a190493[
-
+Description      : Instantly shocks the target with concussive force, causing $s1 Nature damage.$?a190493[
+
+
+
 Earth Shock will consume all stacks of Fulmination to deal extra Nature damage to your target.][]
 
 Name             : Tremor Totem (id=8143) [Spell Family (11)] 
@@ -844,8 +855,10 @@ Effects          :
                    Base Value: 30 | Scaled Value: 30 | SP Coefficient: 0.25000 | PvP Coefficient: 1.00000 | Radius: 50000 yards | Target: Raid Members (56)
 #2 (id=21920)    : Apply Aura (6) | Scale% (Stacking) (61)
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000 | Radius: 50000 yards | Target: Raid Members (56)
-Description      : Increases haste by $s1% for all party and raid members for $d.
-
+Description      : Increases haste by $s1% for all party and raid members for $d.
+
+
+
 Allies receiving this effect will become Exhausted and unable to benefit from Heroism or Time Warp again for $57723d.
 Tooltip          : Haste increased by $w1%.
 
@@ -1088,8 +1101,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 285452 | Target: Enemy (6)
 #2 (id=845772)   : Energize Power (30)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: maelstrom | Target: Self (1)
-Description      : Hurls molten lava at the target, dealing $285452s1 Fire damage.$?a231721[ Lava Burst will always critically strike if the target is affected by Flame Shock.][]$?a343725[
-
+Description      : Hurls molten lava at the target, dealing $285452s1 Fire damage.$?a231721[ Lava Burst will always critically strike if the target is affected by Flame Shock.][]$?a343725[
+
+
+
 |cFFFFFFFFGenerates $343725s3 Maelstrom.|r][]
 
 Name             : Feral Spirit (id=51533) [Spell Family (11)] 
@@ -1118,8 +1133,10 @@ Attributes       : ........ ........ x....... ........   ........ ..x..... .....
 Effects          :
 #1 (id=43877)    : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : Summons two Spirit $?s147783[Raptors][Wolves] that aid you in battle for $228562d. They are immune to movement-impairing effects.
-
+Description      : Summons two Spirit $?s147783[Raptors][Wolves] that aid you in battle for $228562d. They are immune to movement-impairing effects.
+
+
+
 Feral Spirit generates one stack of Maelstrom Weapon immediately, and one stack every $333957t1 sec for $333957d.
 Variables        : $percent=$?s63271[${$58877m1*1.4}][${$58877m1}]
 
@@ -1219,10 +1236,13 @@ Effects          :
                    Base Value: 40 | Scaled Value: 40 | SP Coefficient: 0.25000 | PvP Coefficient: 1.00000 | Trigger Spell: 52128 | Target: Self (1)
 #2 (id=44555)    : Apply Aura (6) | Restore Power (85) | Scaling Class: -1
                    Base Value: 0 | Scaled Value: 50.00002 (coefficient=0.526316) | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : The caster is surrounded by globes of water, granting $s2 mana per 5 sec. When a melee attack hits the caster, the caster regains $52128s1% of their mana. This effect can only occur once every few seconds. 
-
+Description      : The caster is surrounded by globes of water, granting $s2 mana per 5 sec. When a melee attack hits the caster, the caster regains $52128s1% of their mana. This effect can only occur once every few seconds. 
+
+
+
 Only one of your Elemental Shields can be active on you at once.
-Tooltip          : Grants $w2 mana per 5 sec.
+Tooltip          : Grants $w2 mana per 5 sec.
+
 Melee attacks against you trigger additional mana restoration.
 
 Name             : Water Shield (id=52128) [Spell Family (11)] 
@@ -1279,7 +1299,8 @@ Effects          :
                    Affected Spells: Healing Surge (8004), Healing Wave (77472)
                    Family Flags: 7, 80
 Description      : $@spelldesc51564
-Tooltip          : Cast time of next Healing Wave reduced by $w1%.
+Tooltip          : Cast time of next Healing Wave reduced by $w1%.
+
 Critical effect chance of next Healing Surge increased by $w2%.
 
 Name             : Increase Versatility 15 (id=55564) [Passive, Hidden] 
@@ -1563,8 +1584,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | AP Coefficient: 0.75600 | PvP Coefficient: 1.00000 | Target: Enemy (6)
 #2 (id=53785)    : Dummy (3)
                    Base Value: 100 | Scaled Value: 100 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : Charges your off-hand weapon with lava and burns your target, dealing $s1 Fire damage.
-
+Description      : Charges your off-hand weapon with lava and burns your target, dealing $s1 Fire damage.
+
+
+
 Damage is increased by $s2% if your offhand weapon is imbued with Flametongue Weapon. $?s334033[Lava Lash will spread Flame Shock from your target to $334033s2 other nearby targets.][]
 
 Name             : Elemental Fury (id=60188) [Spell Family (11), Passive] 
@@ -1656,10 +1679,11 @@ Effects          :
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Radius: 8 yards | Target: Unknown(87)
 #2 (id=55820)    : Apply Aura (6) | Periodic Dummy (226): every 1 seconds
                    Base Value: 100 | Scaled Value: 100 | PvP Coefficient: 1.00000 | Target: Self (1)
-#3 (id=263791)   : Unknown(179)
+#3 (id=263791)   : Create Area Trigger (179)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 3691 | Radius: 0 - 8 yards | Target: Unknown(87) -> AOE enemy (instant) (16)
 Description      : Causes the earth within $a1 yards of the target location to tremble and break, dealing $<damage> Physical damage over $d and sometimes knocking down enemies.
-Variables        : $mawPower=$?a329580[${1+($329580m5/100)}][${1}]
+Variables        : $mawPower=$?a329580[${1+($329580m5/100)}][${1}]
+
 $damage=${$SPN*0.391*$d/$t2*(1+$@versadmg)*(($137040s1+100)/100)*$<mawPower>}
 
 Name             : Earthgrab (id=64695) [Spell Family (11)] 
@@ -1716,7 +1740,8 @@ Effects          :
 #6 (id=879224)   : Apply Aura (6) | Modify Damage Taken% (87)
                    Base Value: 20 | Scaled Value: 20 | Misc Value: 0x7f | Target: Self (1)
                    Affected School(s): All
-Description      : Reduces the damage your pet takes from area of effect attacks by an additional $s1%.
+Description      : Reduces the damage your pet takes from area of effect attacks by an additional $s1%.
+
 Reduces the range at which enemies detect your pet.
 
 Name             : Viciousness (desc=Racial Passive) (id=68975) [Passive] 
@@ -1880,7 +1905,8 @@ Effects          :
 #3 (id=199332)   : Apply Aura (6) | Dummy (4)
                    Base Value: 14 | Scaled Value: 14 | PvP Coefficient: 1.00000 | Target: Self (1)
 Description      : Blanket the target area in healing rains, restoring ${$73921m1*6*2/$t2} health to up to 6 allies over $d.
-Tooltip          : Your Healing Rain is currently active.
+Tooltip          : Your Healing Rain is currently active.
+
 $?$w1!=0[Magic damage taken reduced by $w1%.][]
 
 Name             : Healing Rain (id=73921) [Spell Family (11)] 
@@ -2296,7 +2322,8 @@ Effects          :
 #1 (id=104830)   : Apply Raid Aura (65) | Modify Damage Taken% (87)
                    Base Value: -10 | Scaled Value: -10 | PvP Coefficient: 1.00000 | Misc Value: 0x7f | Radius: 10 yards | Target: Self (1)
 Description      : The Spirit Link Totem reduces damage taken by all party and raid members within $98007a1 yards by $98007s1%. Every $98017t1 sec, the health of all affected players is redistributed, such that each player ends up with the same percentage of their maximum health.
-Tooltip          : Damage taken reduced by $s1%.
+Tooltip          : Damage taken reduced by $s1%.
+
 Health periodically normalized among other affected party and raid members.
 
 Name             : Spirit Link Totem (id=98008) [Spell Family (11)] 
@@ -2500,8 +2527,10 @@ Effects          :
 #3 (id=127189)   : Apply Aura (6) | Modify Recharge Time (Category) (453)
                    Base Value: -8000 | Scaled Value: -8000 | PvP Coefficient: 1.00000 | Misc Value: 1536 | Target: Self (1)
                    Affected Spells (Category): Lava Burst (51505)
-Description      : Transform into a Flame Ascendant for $d, replacing Chain Lightning with Lava Beam, removing the cooldown on Lava Burst, and increasing the damage of Lava Burst by an amount equal to your critical strike chance.
-
+Description      : Transform into a Flame Ascendant for $d, replacing Chain Lightning with Lava Beam, removing the cooldown on Lava Burst, and increasing the damage of Lava Burst by an amount equal to your critical strike chance.
+
+
+
 When you transform into the Flame Ascendant, instantly cast a Lava Burst at all enemies affected by your Flame Shock, and refresh your Flame Shock durations to $188389d.
 Tooltip          : Transformed into a powerful Fire ascendant. Chain Lightning is transformed into Lava Beam.
 
@@ -2603,8 +2632,10 @@ Effects          :
                    Base Value: 10 | Scaled Value: 10 | PvP Coefficient: 1.00000
 #3 (id=325441)   : Dummy (3)
                    Base Value: 3 | Scaled Value: 3 | PvP Coefficient: 1.00000
-Description      : Unleashes a blast of superheated flame at the enemy, dealing $s1 Fire damage and then jumping to additional nearby enemies. Damage is increased by $s2% after each jump. Affects $x1 total targets.  
-
+Description      : Unleashes a blast of superheated flame at the enemy, dealing $s1 Fire damage and then jumping to additional nearby enemies. Damage is increased by $s2% after each jump. Affects $x1 total targets.  
+
+
+
 |cFFFFFFFFGenerates $343725s6 Maelstrom per target hit.|r 
 
 Name             : Restorative Mists (id=114083) [Spell Family (11)] 
@@ -2897,8 +2928,10 @@ Attributes       : ........ ........ x....... ........   ........ ........ .....
 Effects          :
 #1 (id=132332)   : School Damage (2): elemental
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 1.40000 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : Harnesses the raw power of the elements, dealing $s1 Elemental damage and increasing your Critical Strike or Haste by $118522s1% or Mastery by ${$173184s1*$168534bc1}% for $118522d.$?a343725[
-
+Description      : Harnesses the raw power of the elements, dealing $s1 Elemental damage and increasing your Critical Strike or Haste by $118522s1% or Mastery by ${$173184s1*$168534bc1}% for $118522d.$?a343725[
+
+
+
 |cFFFFFFFFGenerates $343725s10 Maelstrom.|r][]
 
 Name             : Meteor (id=117588) [Spell Family (11)] 
@@ -3402,14 +3435,22 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=210781)   : Apply Aura (6) | Unknown(451)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Increases the effect of your pet's Combat Experience to $156843m2% increased damage. Your pet now gains the following abilities, regardless of its active spec:
-|cFFFFFFFF
-Spiked Collar
-Roar of Sacrifice
-Cornered
-Boar's Speed
-Last Stand
-Blood of the Rhino
+Description      : Increases the effect of your pet's Combat Experience to $156843m2% increased damage. Your pet now gains the following abilities, regardless of its active spec:
+
+|cFFFFFFFF
+
+Spiked Collar
+
+Roar of Sacrifice
+
+Cornered
+
+Boar's Speed
+
+Last Stand
+
+Blood of the Rhino
+
 Great Stamina|r
 
 Name             : Combat Experience (id=156843) [Spell Family (9), Passive] 
@@ -3459,8 +3500,10 @@ Attributes       : ....x... ........ x....... ........   ........ ........ .....
 Effects          :
 #1 (id=219029)   : Summon (28)
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000 | Misc Value: 78001 | Misc Value 2: 0xd4a | Target: Water Totem (42)
-Description      : Summons a totem at your feet for $d that collects power from all of your healing spells. When the totem expires or dies, the stored power is released, healing all injured allies within $157503A1 yards for $157503s2% of all healing done while it was active, divided evenly among targets.
-
+Description      : Summons a totem at your feet for $d that collects power from all of your healing spells. When the totem expires or dies, the stored power is released, healing all injured allies within $157503A1 yards for $157503s2% of all healing done while it was active, divided evenly among targets.
+
+
+
 Casting this spell a second time recalls the totem and releases the healing.
 
 Name             : High Tide (id=157154) [Spell Family (11), Passive] 
@@ -3563,8 +3606,10 @@ Effects          :
 #2 (id=219410)   : Apply Aura (6) | Modify Damage Done% (79)
                    Base Value: 300 | Scaled Value: 300 | PvP Coefficient: 1.00000 | Misc Value: 0x7f | Target: Self (1)
                    Affected School(s): All
-Description      : Call down a lightning strike on an enemy, dealing $s1 Nature damage, and leaving the Storm Elemental charged with energy for $d.
-
+Description      : Call down a lightning strike on an enemy, dealing $s1 Nature damage, and leaving the Storm Elemental charged with energy for $d.
+
+
+
 While charged, the Storm Elemental's damage is increased by $s2%.
 Tooltip          : Damage done increased by $w2%.
 
@@ -3592,11 +3637,15 @@ Effects          :
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000
 #3 (id=899571)   : Dummy (3)
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000
-Description      : Channel the energy of the storms at your target, causing $269005s1 Nature damage to all enemies within $269005A1 yards every $t1 sec. Deals reduced damage beyond $s3 targets.
-
+Description      : Channel the energy of the storms at your target, causing $269005s1 Nature damage to all enemies within $269005A1 yards every $t1 sec. Deals reduced damage beyond $s3 targets.
+
+
+
 The damage of this ability increases by $s2% every time it deals damage.
-Tooltip          : Suffering $<damage> Nature damage every $t1 sec.
-
+Tooltip          : Suffering $<damage> Nature damage every $t1 sec.
+
+
+
 Damage increases by $s2% every $t1 sec.
 Variables        : $damage=${0.1*($SP*1.8)*(1+$@versadmg)*(1+0.01*$137040m3)}
 
@@ -3882,8 +3931,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | AP Coefficient: 0.19200 | PvP Coefficient: 1.00000 | Radius: 8 yards | Target: Cone Front (104)
 #2 (id=739957)   : Dummy (3)
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Electrocutes all enemies in front of you, dealing ${$s1*$<CAP>/$AP} Nature damage. Hitting 2 or more targets enhances your weapons for $187878d, causing Stormstrike and Lava Lash to also deal ${$195592s1*$<CAP>/$AP} Nature damage to all targets in front of you.  
-
+Description      : Electrocutes all enemies in front of you, dealing ${$s1*$<CAP>/$AP} Nature damage. Hitting 2 or more targets enhances your weapons for $187878d, causing Stormstrike and Lava Lash to also deal ${$195592s1*$<CAP>/$AP} Nature damage to all targets in front of you.  
+
+
+
 Each target hit by Crash Lightning increases the damage of your next Stormstrike by $s2%.
 Tooltip          : Stormstrike and Lava Lash deal an additional $195592s1 damage to all targets in front of you.
 Variables        : $CAP=$?$OWB==0[${$AP*0.98}][${($AP+$OAP)*2/3}]--2H, DW
@@ -4025,8 +4076,10 @@ Attributes       : ........ ........ x....... ........   ........ ........ .....
 Effects          :
 #1 (id=274643)   : School Damage (2): nature
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.95000 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : Hurls a bolt of lightning at the target, dealing $s1 Nature damage.$?a343725[
-
+Description      : Hurls a bolt of lightning at the target, dealing $s1 Nature damage.$?a343725[
+
+
+
 |cFFFFFFFFGenerates $343725s1 Maelstrom.|r][]
 
 Name             : Flame Shock (id=188389) [Spell Family (11)] 
@@ -4059,8 +4112,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | SP Coefficient: 0.11600 | PvP Coefficient: 1.00000 | Target: Enemy (6)
 #3 (id=322658)   : Dummy (3)
                    Base Value: 100 | Scaled Value: 100 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : Sears the target with fire, causing $s1 Fire damage and then an additional $o2 Fire damage over $d.
-
+Description      : Sears the target with fire, causing $s1 Fire damage and then an additional $o2 Fire damage over $d.
+
+
+
 Flame Shock can be applied to a maximum of $I targets.
 Tooltip          : Suffering $w2 Fire damage every $t2 sec.
 
@@ -4090,12 +4145,18 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.63500 | PvP Coefficient: 1.00000 | Chain Multiplier: 1 | Chain Targets: 3 | Target: Enemy (6)
 #2 (id=325428)   : Dummy (3)
                    Base Value: 4 | Scaled Value: 4 | PvP Coefficient: 1.00000
-Description      : Hurls a lightning bolt at the enemy, dealing $s1 Nature damage and then jumping to additional nearby enemies. Affects $x1 total targets.$?s187874[
-
-If Chain Lightning hits more than 1 target, each target hit by your Chain Lightning increases the damage of your next Crash Lightning by $333964s1%.][]$?s334308[
-
-Each target hit by Chain Lightning reduces the cooldown of Crash Lightning by ${$334308m1/1000}.1 sec.][]$?a343725[
-
+Description      : Hurls a lightning bolt at the enemy, dealing $s1 Nature damage and then jumping to additional nearby enemies. Affects $x1 total targets.$?s187874[
+
+
+
+If Chain Lightning hits more than 1 target, each target hit by your Chain Lightning increases the damage of your next Crash Lightning by $333964s1%.][]$?s334308[
+
+
+
+Each target hit by Chain Lightning reduces the cooldown of Crash Lightning by ${$334308m1/1000}.1 sec.][]$?a343725[
+
+
+
 |cFFFFFFFFGenerates $343725s5 Maelstrom per target hit.|r][]
 
 Name             : Fire Elemental (id=188592) [Spell Family (11)] 
@@ -4196,11 +4257,16 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=279203)   : Apply Aura (6) | Proc Trigger Spell (42): Fulmination
                    Base Value: 0 | Scaled Value: 0 | SP Coefficient: 0.10000 | PvP Coefficient: 1.00000 | Trigger Spell: 260111 | Target: Self (1)
-Description      : Lightning Bolt, Lava Burst, Chain Lighting, and their Overload spells have a $h% chance to generate a stack of Fulmination, up to $260111u stacks. 
-
-Earth Shock $?s117014[and Elemental Blast ][]will discharge all stacks of Fulmination on the target, causing an extra $260113s1 Nature damage per stack of Fulmination.
-
-Earthquake's cast time is reduced by $s2% per stack of Fulmination, and Earthquake deals $s3% more damage for each stack of Fulmination.
+Description      : Lightning Bolt, Lava Burst, Chain Lighting, and their Overload spells have a $h% chance to generate a stack of Fulmination, up to $260111u stacks. 
+
+
+
+Earth Shock $?s117014[and Elemental Blast ][]will discharge all stacks of Fulmination on the target, causing an extra $260113s1 Nature damage per stack of Fulmination.
+
+
+
+Earthquake's cast time is reduced by $s2% per stack of Fulmination, and Earthquake deals $s3% more damage for each stack of Fulmination.
+
 
 
 Name             : Fulmination! (id=190494) [Spell Family (11), Hidden] 
@@ -4452,10 +4518,14 @@ Effects          :
                    Base Value: 100 | Scaled Value: 100 | PvP Coefficient: 1.00000 | Target: Self (1)
 #5 (id=868289)   : Apply Aura (6) | Dummy (4)
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Surround yourself with a shield of lightning for $d.
-
-Melee attackers have a $h% chance to suffer $192109s1 Nature damage$?a137041[ and have a $s3% chance to generate a stack of Maelstrom Weapon]?a137040[ and have a $s4% chance to generate $s5 Maelstrom][].
-
+Description      : Surround yourself with a shield of lightning for $d.
+
+
+
+Melee attackers have a $h% chance to suffer $192109s1 Nature damage$?a137041[ and have a $s3% chance to generate a stack of Maelstrom Weapon]?a137040[ and have a $s4% chance to generate $s5 Maelstrom][].
+
+
+
 Only one Elemental Shield can be active on the Shaman at a time.
 Tooltip          : Chance to deal $192109s1 Nature damage when you take melee damage.
 
@@ -4616,8 +4686,10 @@ Attributes       : ........ ........ x.x..... ........   ........ ..x..... .....
 Effects          :
 #1 (id=282046)   : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : Calls forth a Greater Storm Elemental to hurl gusts of wind that damage the Shaman's enemies for $157299d.
-
+Description      : Calls forth a Greater Storm Elemental to hurl gusts of wind that damage the Shaman's enemies for $157299d.
+
+
+
 While the Storm Elemental is active, each time you cast Lightning Bolt or Chain Lightning, the cast time of Lightning Bolt and Chain Lightning is reduced by $263806s1%, stacking up to $263806u times.
 
 Name             : Fulmination (id=193777) [Spell Family (11), Hidden] 
@@ -4729,7 +4801,8 @@ Effects          :
 #2 (id=316393)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Radius: 40 yards | Target: Raid Members (56)
 Description      : $@spelldesc195255
-Tooltip          : Empowered with lightning.
+Tooltip          : Empowered with lightning.
+
 Attacks and spellcasts have a chance to deal additional Nature damage.
 
 Name             : Stormlash (id=195256) [Spell Family (11)] 
@@ -4827,8 +4900,10 @@ Effects          :
                    Base Value: -50 | Scaled Value: -50 | PvP Coefficient: 1.00000 | Mechanic: Snare | Target: Enemy (6)
 #3 (id=313061)   : Dummy (3)
                    Base Value: 100 | Scaled Value: 100 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : Chills the target with frost, causing $s1 Frost damage and reducing the target's movement speed by $s2% for $d.$?s33757[
-
+Description      : Chills the target with frost, causing $s1 Frost damage and reducing the target's movement speed by $s2% for $d.$?s33757[
+
+
+
 Frost Shock shares a cooldown with Flame Shock.][]
 Tooltip          : Movement speed reduced by $s2%.
 
@@ -5029,8 +5104,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Enemy (6)
 #2 (id=811561)   : Dummy (3)
                    Base Value: 100 | Scaled Value: 100 | PvP Coefficient: 1.00000
-Description      : Calls forth a Greater Fire Elemental to rain destruction on your enemies for $188592d. 
-
+Description      : Calls forth a Greater Fire Elemental to rain destruction on your enemies for $188592d. 
+
+
+
 While the Fire Elemental is active, Flame Shock deals damage $188592s2% faster$?a343226[, and newly applied Flame Shocks last $343226s1% longer][].
 
 Name             : Earth Elemental (id=198103) [Spell Family (11)] 
@@ -5597,7 +5674,8 @@ Effects          :
 #2 (id=297756)   : Apply Aura (6) | Taunt (11)
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Radius: 0 - 8 yards | Mechanic: Heal | Target: At Enemy (53) -> AOE enemy (instant) (16)
 Description      : Shakes the ground with thundering force, doing ${$<damage>} Nature damage to all enemies within $A1 yards, and Provoking them. This ability causes a moderate amount of additional threat.
-Variables        : $ce=$?s152244[${1.85}][${1.5}]
+Variables        : $ce=$?s152244[${1.85}][${1.5}]
+
 $damage=${$<ce>*($RAP*0.250)}
 
 Name             : Feral Swipe (id=202045) [Spell Family (11)] 
@@ -5659,7 +5737,8 @@ Effects          :
                    Affected Spells: Windfury Weapon (33757), Windfury Weapon (319773)
                    Family Flags: 72
 Description      : Unleashes the inner power of the |cFFFFCC99Doomhammer|r, causing all auto attacks to trigger Windfury, and increasing damage dealt by Windfury by $s2% for $d.
-Tooltip          : Chance to proc Windfury weapon on auto attacks increased by 100%.
+Tooltip          : Chance to proc Windfury weapon on auto attacks increased by 100%.
+
 Windfury damage increased by $s2%.
 
 Name             : Stormkeeper (desc=Artifact) (id=205495) [Spell Family (11)] 
@@ -5721,8 +5800,10 @@ Attributes       : ....x... ........ x....... ........   ........ ........ .....
 Effects          :
 #1 (id=306721)   : Summon (28)
                    Base Value: 10 | Scaled Value: 10 | PvP Coefficient: 1.00000 | Misc Value: 104818 | Misc Value 2: 0xecb | Target: Unknown(87)
-Description      : Summons a totem at the target location for $d. All allies within $207495s1 yards of the totem gain $207498s1% increased health. If an ally dies, the totem will be consumed to allow them to Reincarnate with $207553s1% health and mana.
-
+Description      : Summons a totem at the target location for $d. All allies within $207495s1 yards of the totem gain $207498s1% increased health. If an ally dies, the totem will be consumed to allow them to Reincarnate with $207553s1% health and mana.
+
+
+
 Cannot reincarnate an ally who dies to massive damage.
 
 Name             : Ancestral Vigor (id=207400) [Spell Family (11)] 
@@ -5810,8 +5891,10 @@ Effects          :
 #2 (id=322959)   : Apply Aura (6) | Unknown(316)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 127 | Misc Value 2: 0x32 | Target: Friend (21)
 Description      : $@spelldesc207399
-Tooltip          : Health increased by $s1%.
-
+Tooltip          : Health increased by $s1%.
+
+
+
 If you die, the protection of the ancestors will allow you to return to life.
 
 Name             : Downpour (id=207778) [Spell Family (11)] 
@@ -5839,8 +5922,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 1.75000 | PvP Coefficient: 1.00000 | Radius: 0 - 12 yards | Target: Unknown(87) -> AOE friendly (31)
 #2 (id=329508)   : Dummy (3)
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000 | Radius: 12 yards | Target: Unknown(87)
-Description      : A burst of water at the target location heals up to six injured allies within $A1 yards for $s1.
-
+Description      : A burst of water at the target location heals up to six injured allies within $A1 yards for $s1.
+
+
+
 Cooldown increased by $s2 sec for each target effectively healed.
 
 Name             : Stormlash (id=207835) [Spell Family (11)] 
@@ -5871,7 +5956,8 @@ Effects          :
 #1 (id=307454)   : Apply Aura (6) | Proc Trigger Spell (42): Stormlash
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 195256 | Radius: 0 - 10 yards | Target: At Caster (22) -> AOE friendly (30)
 Description      : Whenever you attack with enhanced weapons you have a chance to enhance up to $s1 allies, causing their attacks and spellcasts to deal additional Nature damage.
-Tooltip          : Empowered with lightning.
+Tooltip          : Empowered with lightning.
+
 Attacks and spellcasts have a chance to deal additional Nature damage.
 
 Name             : Eye of the Twisting Nether (id=207994) [Spell Family (4), Passive] 
@@ -6019,8 +6105,10 @@ Effects          :
                    Family Flags: 31
 #3 (id=845774)   : Energize Power (30)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: maelstrom | Target: Self (1)
-Description      : Hurls frigid ice at the target, dealing $s1 Frost damage and causing your next $n Frost Shocks to deal $s2% increased damage and generate $343725s7 Maelstrom.
-
+Description      : Hurls frigid ice at the target, dealing $s1 Frost damage and causing your next $n Frost Shocks to deal $s2% increased damage and generate $343725s7 Maelstrom.
+
+
+
 |cFFFFFFFFGenerates $343725s8 Maelstrom.|r
 Tooltip          : Frost Shock damage increased by $s2%.
 
@@ -6041,7 +6129,7 @@ Attributes       : ........ ........ x....... ........   ...x...x ........ .....
                  : ........ ........ ........ ........   
                  : Not Shapeshifted (16), No Redirection (35), No Reflection (39), Always Show Ground Texture (190), Periodic Can Crit (265), Aura Points On Client (268), Caster Death Cancels Persistent Area Auras (347), Allow Class Ability Procs (416), Periodic Refresh Extends Duration (436)
 Effects          :
-#1 (id=312254)   : Unknown(179)
+#1 (id=312254)   : Create Area Trigger (179)
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Misc Value: 6826 | Radius: 4 yards | Target: Unknown(47)
 Description      : $@spelldesc192246
 
@@ -6312,8 +6400,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.82500 | PvP Coefficient: 1.00000 | Target: Enemy (6)
 #2 (id=326662)   : Energize Power (30)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: maelstrom | Target: Self (1)
-Description      : Hurls frigid ice at the target, dealing $s1 Frost damage.
-
+Description      : Hurls frigid ice at the target, dealing $s1 Frost damage.
+
+
+
 |cFFFFFFFFGenerates $s2 Maelstrom.|r
 
 Name             : Molten Weapon (id=224125) [Spell Family (11)] 
@@ -6373,7 +6463,8 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Friend (21)
 Description      : $@spelldesc262624
 Tooltip          : All melee attacks now also strike the target with an Icy Edge, causing bonus Frost damage and snaring them by $271920s2% for $271920d.
-Variables        : $mastery=$?s77223[${1+0.01*$77223m1}][${1}]
+Variables        : $mastery=$?s77223[${1+0.01*$77223m1}][${1}]
+
 $damage=${($AP*0.35)*(1+($137041s1/100))*$<mastery>*(1+$@versadmg)}
 
 Name             : Crackling Surge (id=224127) [Spell Family (11)] 
@@ -6706,8 +6797,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 2874.795 (coefficient=352.5287) | PvP Coefficient: 0.50000 | Radius: 0 - 5 yards | Target: Custom (18) -> AOE enemy (instant) (16)
 #2 (id=479677)   : Direct Heal (10) | Scaling Class: -8
                    Base Value: 0 | Scaled Value: 2874.795 (coefficient=352.5287) | PvP Coefficient: 1.00000 | Radius: 0 - 8 yards | Target: Custom (18) -> AOE friendly (31)
-Description      : Deals $s1 Holy Damage to enemies within $A1.
-
+Description      : Deals $s1 Holy Damage to enemies within $A1.
+
+
+
 Heals $s2 to allies within $A1. 
 
 Name             : Fulmination (desc=0) (id=260111) [Spell Family (11)] 
@@ -6741,8 +6834,10 @@ Effects          :
 #3 (id=843163)   : Apply Aura (6) | Dummy (4)
                    Base Value: 20 | Scaled Value: 20 | PvP Coefficient: 1.00000 | Misc Value: 22 | Target: Self (1)
 Description      : $@spelldesc190493
-Tooltip          : Your next Earth Shock $?s117014[or Elemental Blast ][]will deal an additional ${$s1*$260113s1} Nature damage to the target.
-
+Tooltip          : Your next Earth Shock $?s117014[or Elemental Blast ][]will deal an additional ${$s1*$260113s1} Nature damage to the target.
+
+
+
 Your next Earthquake's cast time is reduced by ${$min(-$s2,100)}%, and your next Earthquake's damage is increased by $s3%.
 
 Name             : Fulmination (desc=Passive) (id=260113) [Spell Family (11)] 
@@ -6831,7 +6926,8 @@ Effects          :
                    Base Value: -5 | Scaled Value: -5 | PvP Coefficient: 1.00000 | Misc Value: 0x7f | Target: Self (1)
                    Affected School(s): All
 Description      : $@spelldesc260878
-Tooltip          : Movement speed increased by $s1%
+Tooltip          : Movement speed increased by $s1%
+
 Damage taken reduced by $s2%.
 
 Name             : Spirit Wolf (id=260882) [Spell Family (11), Hidden] 
@@ -6920,12 +7016,18 @@ Effects          :
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000
 #3 (id=753865)   : Dummy (3)
                    Base Value: 3 | Scaled Value: 3 | PvP Coefficient: 1.00000
-Description      : Casting Earth Shock also enhances your next spell cast within $285514d:
-
-|cFFFFFFFFFlame Shock|r: The next cast also applies Flame Shock to $287185s1 additional target within $287185A1 yards of the target.
-|cFFFFFFFFLightning Bolt|r: Your next cast will cause an additional $s2-$s3 Elemental Overloads.
-|cFFFFFFFFLava Burst|r: Reduces the cooldown of your $?s192249[Storm][Fire] Elemental by ${$m1/1000}.1 sec.
-|cFFFFFFFFFrost Shock|r: Freezes the target in place for $285515d.
+Description      : Casting Earth Shock also enhances your next spell cast within $285514d:
+
+
+
+|cFFFFFFFFFlame Shock|r: The next cast also applies Flame Shock to $287185s1 additional target within $287185A1 yards of the target.
+
+|cFFFFFFFFLightning Bolt|r: Your next cast will cause an additional $s2-$s3 Elemental Overloads.
+
+|cFFFFFFFFLava Burst|r: Reduces the cooldown of your $?s192249[Storm][Fire] Elemental by ${$m1/1000}.1 sec.
+
+|cFFFFFFFFFrost Shock|r: Freezes the target in place for $285515d.
+
 
 
 Name             : Elemental Spirits (id=262624) [Spell Family (11), Passive, Hidden] 
@@ -7036,8 +7138,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 95 (coefficient=1) | PvP Coefficient: 0.50000 | Target: Self (1)
                    Affected Spells: Chain Heal (1064)
                    Family Flags: 8
-Description      : Increases the healing of Chain Heal by $s1 and causes it to bounce an additional time.
-
+Description      : Increases the healing of Chain Heal by $s1 and causes it to bounce an additional time.
+
+
+
 |C000FFF00Restoration|R
 Tooltip          : Increases the healing of Chain Heal by $s1 and causes it to bounce an additional time.
 
@@ -7086,8 +7190,10 @@ Effects          :
                    Family Flags: 85
 #2 (id=709473)   : Dummy (3)
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000
-Description      : Increases the critical strike chance of Crash Lightning by $s1 and increases the radius of Crash Lightning by $s2.
-
+Description      : Increases the critical strike chance of Crash Lightning by $s1 and increases the radius of Crash Lightning by $s2.
+
+
+
 |C000FFF00Enhancement|R
 Tooltip          : Increases the critical strike chance of Crash Lightning by $s1 and increases the radius of Crash Lightning by $s2.
 
@@ -7247,8 +7353,10 @@ Effects          :
                    Family Flags: 44
 #2 (id=709472)   : Dummy (3)
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000
-Description      : Increases the damage of Lava Burst by $s1 and causes it to grant an additional $s2 Maelstrom.
-
+Description      : Increases the damage of Lava Burst by $s1 and causes it to grant an additional $s2 Maelstrom.
+
+
+
 |C000FFF00Elemental/Restoration|R
 Tooltip          : Increases the damage of Lava Burst by $s1 and causes it to grant an additional $s2 Maelstrom.
 
@@ -7273,8 +7381,10 @@ Effects          :
                    Family Flags: 36
 #2 (id=709480)   : Dummy (3) | Scaling Class: -1
                    Base Value: 0 | Scaled Value: 285 (coefficient=3) | PvP Coefficient: 0.50000
-Description      : Increases the critical chance of Stormstrike by $s1 and causes Stormstrike critical strikes to deal an additional $s2 damage.
-
+Description      : Increases the critical chance of Stormstrike by $s1 and causes Stormstrike critical strikes to deal an additional $s2 damage.
+
+
+
 |C000FFF00Enhancement|R
 Tooltip          : Increases the critical chance of Stormstrike by $s1 and causes Stormstrike critical strikes to deal an additional $s2 damage.
 
@@ -8200,8 +8310,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 44.23665 (coefficient=0.465649) | PvP Coefficient: 0.50000 | Trigger Spell: 273830 | Target: Self (1)
 #2 (id=725767)   : Apply Aura (6) | Dummy (4) | Scaling Class: -1
                    Base Value: 0 | Scaled Value: 87.02295 (coefficient=0.916031) | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : Your spells and abilities have a chance to create a Surging Droplet nearby. Collecting it increases your primary stat by $s1 for $273842d.
-
+Description      : Your spells and abilities have a chance to create a Surging Droplet nearby. Collecting it increases your primary stat by $s1 for $273842d.
+
+
+
 Rarely, a Void Droplet will be created, increasing your primary stat by $s2 for $273843d instead.
 
 Name             : Filthy Transfusion (id=273834) [Passive] 
@@ -8562,8 +8674,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 32.585 (coefficient=0.343) | PvP Coefficient: 0.50000
 #3 (id=734564)   : Dummy (3) | Scaling Class: -7
                    Base Value: 0 | Scaled Value: 32.585 (coefficient=0.343) | PvP Coefficient: 0.50000
-Description      : Dealing Fire damage grants $s1 Critical Strike for $279028d. 
-Dealing Frost damage grants $s2 Mastery for $279029d.
+Description      : Dealing Fire damage grants $s1 Critical Strike for $279028d. 
+
+Dealing Frost damage grants $s2 Mastery for $279029d.
+
 Dealing Nature damage grants $s3 Haste for $279033d.
 
 Name             : Rumbling Tremors (id=278709) [Spell Family (11), Passive] 
@@ -8918,8 +9032,10 @@ Effects          :
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000
 #4 (id=738960)   : Apply Aura (6) | Skill (30)
                    Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
-Description      : Your spells and abilities have a chance to fire a bomb at your target, which when in proximity breaks into $s3 smaller bombs. Upon hitting the ground, each smaller bomb deals $280984s1 damage to all nearby enemies.
-
+Description      : Your spells and abilities have a chance to fire a bomb at your target, which when in proximity breaks into $s3 smaller bombs. Upon hitting the ground, each smaller bomb deals $280984s1 damage to all nearby enemies.
+
+
+
 Increases your Kul Tiran or Zandalari Engineering by $s4.
 
 Name             : Ricocheting Inflatable Pyrosaw (id=280168) [Passive] 
@@ -8947,10 +9063,14 @@ Effects          :
                    Base Value: 4 | Scaled Value: 4 | PvP Coefficient: 1.00000
 #3 (id=738961)   : Apply Aura (6) | Skill (30)
                    Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
-Description      : Your spells and abilities have a chance to hurl a R.I.P that bounces among $s2 enemies, dealing $280656s1 Fire damage to each. 
-
-Beneficial spells have a chance to hurl a Mechanized External Needle Dispenser, healing up to $s2 allies for $280658s1.
-
+Description      : Your spells and abilities have a chance to hurl a R.I.P that bounces among $s2 enemies, dealing $280656s1 Fire damage to each. 
+
+
+
+Beneficial spells have a chance to hurl a Mechanized External Needle Dispenser, healing up to $s2 allies for $280658s1.
+
+
+
 Increases your Kul Tiran or Zandalari Engineering by $s3.
 
 Name             : Auto-Self-Cauterizer (id=280172) [Passive] 
@@ -8979,10 +9099,14 @@ Effects          :
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000
 #3 (id=738963)   : Apply Aura (6) | Skill (30)
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
-Description      : Taking damage has a chance to unleash your Auto-Self-Cauterizer, healing you for $280583s1, removing most* bleed effects, and snaring nearby enemies by $280583s2% for $280583d.
-
-Increases your Kul Tiran or Zandalari Engineering by $s3.
-
+Description      : Taking damage has a chance to unleash your Auto-Self-Cauterizer, healing you for $280583s1, removing most* bleed effects, and snaring nearby enemies by $280583s2% for $280583d.
+
+
+
+Increases your Kul Tiran or Zandalari Engineering by $s3.
+
+
+
 *Efficacy may vary.
 
 Name             : Synaptic Spark Capacitor (id=280174) [Spell Family (7), Passive] 
@@ -9010,8 +9134,10 @@ Effects          :
                    Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
 #3 (id=742699)   : Dummy (3) | Scaling Class: -8
                    Base Value: 0 | Scaled Value: 224.6529 (coefficient=9.294479) | PvP Coefficient: 0.50000
-Description      : Your spells and abilities have a chance to cause the target to become a Spark Coil for $280655d. Enemies within $s1 yards of the Spark Coil take $s3 damage every 2 seconds and deal $280847s1% reduced damage to you.
-
+Description      : Your spells and abilities have a chance to cause the target to become a Spark Coil for $280655d. Enemies within $s1 yards of the Spark Coil take $s3 damage every 2 seconds and deal $280847s1% reduced damage to you.
+
+
+
 Increases your Kul Tiran or Zandalari Engineering by $s2.
 
 Name             : Relational Normalization Gizmo (id=280178) [Passive] 
@@ -9038,8 +9164,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 95 (coefficient=1) | PvP Coefficient: 0.50000 | Target: Self (1)
 #2 (id=738959)   : Apply Aura (6) | Skill (30)
                    Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
-Description      : Your spells and abilities have a chance to grow or shrink the world. Shrinking the world grants you $280654s4 primary stat and $280654s6 maximum health for $280654d. Growing the world grants you $280653s1 Haste and $280653s3% movement speed for $280653d.
-
+Description      : Your spells and abilities have a chance to grow or shrink the world. Shrinking the world grants you $280654s4 primary stat and $280654s6 maximum health for $280654d. Growing the world grants you $280653s1 Haste and $280653s3% movement speed for $280653d.
+
+
+
 Increases your Kul Tiran or Zandalari Engineering by $s2.
 
 Name             : Personal Absorb-o-Tron (id=280181) [Passive] 
@@ -9066,8 +9194,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 3988.146 (coefficient=165) | PvP Coefficient: 0.20000 | Target: Self (1)
 #2 (id=738962)   : Apply Aura (6) | Skill (30)
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
-Description      : Taking damage has a chance to call your Personal Absorb-o-Tron, absorbing $280661s1% of damage taken over $280660d, up to $280660s1.
-
+Description      : Taking damage has a chance to call your Personal Absorb-o-Tron, absorbing $280661s1% of damage taken over $280660d, up to $280660s1.
+
+
+
 Increases your Kul Tiran or Zandalari Engineering by $s2.
 
 Name             : Dagger in the Back (id=280284) [Passive] 
@@ -9217,8 +9347,10 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=738151)   : Apply Aura (6) | Unknown(285) | Scaling Class: -1
                    Base Value: 0 | Scaled Value: 2.0805 (coefficient=0.0219) | PvP Coefficient: 0.50000 | Trigger Spell: 280708 | Target: Self (1)
-Description      : Your armor gathers and analyzes combat data every $280708t1 sec, increasing your primary stat by $s1, stacking up to $280709u times. The data decays while out of combat.
-
+Description      : Your armor gathers and analyzes combat data every $280708t1 sec, increasing your primary stat by $s1, stacking up to $280709u times. The data decays while out of combat.
+
+
+
 Enables $@spellname280573 within Uldir.
 
 Name             : Laser Matrix (id=280559) [Passive] 
@@ -9240,8 +9372,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 978.9084 (coefficient=40.5) | PvP Coefficient: 0.50000 | Trigger Spell: 280702 | Target: Self (1)
 #2 (id=738401)   : Apply Aura (6) | Dummy (4) | Scaling Class: -8
                    Base Value: 0 | Scaled Value: 1751.7 (coefficient=72.47239) | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : Your spells and abilities have a chance to release a barrage of lasers, dealing $s1 Arcane damage split among all enemies and restoring $s2 health split among injured allies.
-
+Description      : Your spells and abilities have a chance to release a barrage of lasers, dealing $s1 Arcane damage split among all enemies and restoring $s2 health split among injured allies.
+
+
+
 Enables $@spellname280573 within Uldir.
 
 Name             : Glory in Battle (id=280577) [Passive] 
@@ -9263,7 +9397,8 @@ Effects          :
                    Base Value: 0 | Scaled Value: 86.80236 (coefficient=0.913709) | PvP Coefficient: 0.50000 | Trigger Spell: 280778 | Target: Self (1)
 #2 (id=738555)   : Apply Aura (6) | Dummy (4) | Scaling Class: -7
                    Base Value: 0 | Scaled Value: 52.9283 (coefficient=0.55714) | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : Your spells and abilities have a chance to grant $s1 Critical Strike and $s2 Haste for $280780d. 
+Description      : Your spells and abilities have a chance to grant $s1 Critical Strike and $s2 Haste for $280780d. 
+
 Attacking a member of the opposite faction significantly increases this chance.
 
 Name             : Retaliatory Fury (id=280579) [Passive] 
@@ -9286,7 +9421,8 @@ Effects          :
                    Base Value: 0 | Scaled Value: 97.91736 (coefficient=1.030709) | PvP Coefficient: 0.50000 | Target: Self (1)
 #2 (id=738573)   : Apply Aura (6) | Unknown(285) | Scaling Class: -1
                    Base Value: 0 | Scaled Value: 342.7252 (coefficient=3.607634) | PvP Coefficient: 0.50000 | Trigger Spell: 280785 | Target: Self (1)
-Description      : Your spells and abilities have a chance to grant $s1 Mastery and absorb $s2 damage for $280788d. 
+Description      : Your spells and abilities have a chance to grant $s1 Mastery and absorb $s2 damage for $280788d. 
+
 Attacking a member of the opposite faction is more likely to activate this effect.
 
 Name             : Combined Might (id=280580) [Passive] 
@@ -9444,7 +9580,8 @@ Effects          :
                    Base Value: 0 | Scaled Value: 86.80236 (coefficient=0.913709) | PvP Coefficient: 0.50000 | Trigger Spell: 280851 | Target: Self (1)
 #2 (id=738699)   : Apply Aura (6) | Dummy (4) | Scaling Class: -7
                    Base Value: 0 | Scaled Value: 52.9283 (coefficient=0.55714) | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : Your spells and abilities have a chance to grant $s1 Critical Strike and $s2 Haste for $280852d. 
+Description      : Your spells and abilities have a chance to grant $s1 Critical Strike and $s2 Haste for $280852d. 
+
 Attacking a member of the opposite faction significantly increases this chance.
 
 Name             : Last Gift (id=280624) [Passive] 
@@ -9467,7 +9604,8 @@ Effects          :
                    Base Value: 0 | Scaled Value: 97.91736 (coefficient=1.030709) | PvP Coefficient: 0.50000 | Target: Self (1)
 #2 (id=738721)   : Apply Aura (6) | Unknown(285) | Scaling Class: -1
                    Base Value: 0 | Scaled Value: 342.7252 (coefficient=3.607634) | PvP Coefficient: 0.50000 | Trigger Spell: 280860 | Target: Self (1)
-Description      : Your spells and abilities have a chance to grant $s1 Mastery and absorb $s2 damage for $280862d. 
+Description      : Your spells and abilities have a chance to grant $s1 Mastery and absorb $s2 damage for $280862d. 
+
 Attacking a member of the opposite faction is more likely to activate this effect.
 
 Name             : Stronger Together (id=280625) [Passive] 
@@ -9892,7 +10030,8 @@ Effects          :
 #3 (id=750716)   : Dummy (3)
                    Base Value: 100 | Scaled Value: 100 | PvP Coefficient: 1.00000
 Description      : Your damaging abilities have a chance to deal $<dmg> Plague damage over $287638d, and your healing abilities have a chance to restore $<heal> health over $287639d. These effects are increased by up to $s3% based on the target's missing health.
-Variables        : $dmg=${$s1*3}
+Variables        : $dmg=${$s1*3}
+
 $heal=${$s2*3}
 
 Name             : Endless Hunger (id=287662) [Passive] 
@@ -9956,8 +10095,10 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=750972)   : Apply Aura (6) | Unknown(285) | Scaling Class: -8
                    Base Value: 0 | Scaled Value: 894.3114 (coefficient=37) | PvP Coefficient: 0.20000 | Trigger Spell: 287775 | Target: Self (1)
-Description      : While Reincarnation is off cooldown, your maximum health is increased by $s1.
-
+Description      : While Reincarnation is off cooldown, your maximum health is increased by $s1.
+
+
+
 While you are at full health, Reincarnation cools down $287777s1% faster.
 
 Name             : Fight or Flight (id=287818) [Passive] 
@@ -10192,9 +10333,12 @@ Effects          :
                    Base Value: 0 | Scaled Value: 9.527075 (coefficient=0.100285) | PvP Coefficient: 0.50000 | Target: Self (1)
 #3 (id=778210)   : Apply Aura (6) | Dummy (4) | Scaling Class: -7
                    Base Value: 0 | Scaled Value: 76.2167 (coefficient=0.802281) | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : Your Mastery is increased by $s1, plus an additional $s2 for each ally also affected by Loyal to the End, up to $s3.
-
-When you die, your allies gain Critical Strike, Haste, and Versatility equal to their Mastery bonus from this trait.
+Description      : Your Mastery is increased by $s1, plus an additional $s2 for each ally also affected by Loyal to the End, up to $s3.
+
+
+
+When you die, your allies gain Critical Strike, Haste, and Versatility equal to their Mastery bonus from this trait.
+
 
 
 Name             : Undulating Tides (id=303008) [Passive] 
@@ -10221,8 +10365,10 @@ Effects          :
                    Base Value: 50 | Scaled Value: 4559.121 (coefficient=188.6228) | PvP Coefficient: 0.25000 | Target: Self (1)
 #4 (id=778216)   : Apply Aura (6) | Dummy (4)
                    Base Value: 45 | Scaled Value: 45 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Your damaging spells and abilities have a chance to crash a wave upon your target for $s1 Frost damage.
-
+Description      : Your damaging spells and abilities have a chance to crash a wave upon your target for $s1 Frost damage.
+
+
+
 When your health drops below $s2%, gain a shield absorbing $s3 damage within $303390d. When this occurs, Undulating Tides cannot trigger again for $s4 sec.
 
 Name             : Heart of Darkness (id=317137) [Passive] 
@@ -10463,7 +10609,7 @@ Range            : 40 yards
 Cast Time        : 2.5 seconds
 GCD              : 1.5 seconds
 Cooldown         : 90 seconds
-Labels           : 976: Decrypted Urh Cypher (368239 effect#4)
+Labels           : 976
 Affecting spells : Maelstrom Weapon (187881 effect#1), Flash Flood (280615 effect#1)
 Family Flags     : 65
 Attributes       : ........ ........ x....... ........   ........ ..x..... ........ ........ 
@@ -10480,10 +10626,14 @@ Effects          :
                    Base Value: 3 | Scaled Value: 3 | PvP Coefficient: 1.00000 | Target: Unknown(25)
 #2 (id=807997)   : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Radius: 0 - 20 yards | Target: Unknown(63) -> AOE Custom (8)
-Description      : Send a wave of anima at the target, which then jumps to additional nearby targets. Deals $320752s1 Shadow damage to up to 5 enemies, and restores $320751s1 health to up to 5 allies.
-
-For each target critically struck, the cooldown of Chain Harvest is reduced by 5 sec.$?s168534[
-
+Description      : Send a wave of anima at the target, which then jumps to additional nearby targets. Deals $320752s1 Shadow damage to up to 5 enemies, and restores $320751s1 health to up to 5 allies.
+
+
+
+For each target critically struck, the cooldown of Chain Harvest is reduced by 5 sec.$?s168534[
+
+
+
 Generates $368583s1 Maelstrom per target damaged or healed.][]
 
 Name             : Surge of Earth (id=320746) [Spell Family (11)] 
@@ -10611,7 +10761,7 @@ Range            : 40 yards
 GCD              : 1 seconds
 Duration         : 30 seconds
 Cooldown         : 60 seconds
-Labels           : 976: Decrypted Urh Cypher (368239 effect#4)
+Labels           : 976
 Proc Chance      : 101%
 Proc Flags       : ....x... ..x.x.x. x....... ........ 
                  : Yellow Melee, Generic Heal, Generic Hostile Spell, Magic Heal, Magic Hostile Spell
@@ -10640,8 +10790,10 @@ Effects          :
                    Base Value: 6 | Scaled Value: 6 | PvP Coefficient: 1.00000 | Radius: 8 yards | Target: Unknown(87)
 #7 (id=814138)   : Apply Aura (6) | Override Action Spell (Misc /w Base) (332)
                    Base Value: 324519 | Scaled Value: 324519 | PvP Coefficient: 1.00000 | Misc Value: 324386 | Target: Self (1)
-Description      : Summon a totem at the target location for $d. Your next $s2 damage spells or abilities will cause the totem to radiate $324520s1 Arcane damage to up to $324520I enemies near the totem, and your next $s4 healing spells will heal up to $s6 allies near the totem for $324522s1 health.
-
+Description      : Summon a totem at the target location for $d. Your next $s2 damage spells or abilities will cause the totem to radiate $324520s1 Arcane damage to up to $324520I enemies near the totem, and your next $s4 healing spells will heal up to $s6 allies near the totem for $324522s1 health.
+
+
+
 Casting this ability again while the totem is active will relocate the totem.
 
 Name             : Vesper Totem (desc=Kyrian) (id=324519) [Spell Family (11)] 
@@ -10722,7 +10874,7 @@ GCD              : 1.5 seconds
 Velocity         : 45 yards/sec
 Charges          : 1 (45 seconds cooldown)
 Category         : 1893
-Labels           : 976: Decrypted Urh Cypher (368239 effect#4)
+Labels           : 976
 Affecting spells : Maelstrom Weapon (187881 effects: #1, #2)
 Family Flags     : 25
 Attributes       : ........ ........ x.x..... ........   ........ ........ ........ ........ 
@@ -10743,8 +10895,10 @@ Effects          :
                    Base Value: 80 | Scaled Value: 80 | PvP Coefficient: 1.00000 | Target: Unknown(25)
 #4 (id=871501)   : Dummy (3)
                    Base Value: 150 | Scaled Value: 150 | PvP Coefficient: 1.00000 | Target: Unknown(25)
-Description      : Blast your target with a Primordial Wave, dealing $327162s1 Shadow damage and apply Flame Shock to an enemy, or $?a137039[heal an ally for $327163s1 and apply Riptide to them][heal an ally for $327163s1].
-
+Description      : Blast your target with a Primordial Wave, dealing $327162s1 Shadow damage and apply Flame Shock to an enemy, or $?a137039[heal an ally for $327163s1 and apply Riptide to them][heal an ally for $327163s1].
+
+
+
 Your next $?a137040[Lava Burst]?a137041[Lightning Bolt][Healing Wave] will also hit all targets affected by your $?a137040|a137041[Flame Shock][Riptide] for $?a137039[$s2%]?a137040[$s3%][$s4%] of normal $?a137039[healing][damage].
 
 Name             : Primordial Wave (desc=Necrolord) (id=327161) [Spell Family (11), Hidden] 
@@ -10871,7 +11025,7 @@ Range            : 40 yards
 GCD              : 1.5 seconds
 Duration         : 3 seconds
 Cooldown         : 120 seconds
-Labels           : 976: Decrypted Urh Cypher (368239 effect#4)
+Labels           : 976
 Affecting spells : Essential Extraction (339183 effect#1)
 Family Flags     : 125
 Attributes       : ........ ........ x....... ........   ..x...x. ........ ........ .....x.. 
@@ -10892,10 +11046,14 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 328933 | Target: Self (1)
 #4 (id=871384)   : Dummy (3)
                    Base Value: 3 | Scaled Value: 3 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Transfer the life force of up to $328928I enemies in the targeted area, dealing ${($328928s1*$d/$t2) + $328928s1} Nature damage evenly split to each enemy target over $d. $?a137041[
-
-Fully channeling Fae Transfusion generates $s4 $Lstack:stacks; of Maelstrom Weapon.][]
-
+Description      : Transfer the life force of up to $328928I enemies in the targeted area, dealing ${($328928s1*$d/$t2) + $328928s1} Nature damage evenly split to each enemy target over $d. $?a137041[
+
+
+
+Fully channeling Fae Transfusion generates $s4 $Lstack:stacks; of Maelstrom Weapon.][]
+
+
+
 Pressing Fae Transfusion again within $328933d will release $s1% of all damage from Fae Transfusion, healing up to $328930s2 allies within $328930A1 yds.
 
 Name             : Fae Transfusion (desc=Night Fae) (id=328928) [Spell Family (11)] 
@@ -11374,7 +11532,8 @@ Effects          :
                    Affected Spells: Chain Heal (1064), Healing Wave (77472)
                    Family Flags: 8, 80
 Description      : $@spelldesc335891
-Tooltip          : Cast time of Healing Wave and Chain Heal reduced by $s1%.
+Tooltip          : Cast time of Healing Wave and Chain Heal reduced by $s1%.
+
 Mana cost of Healing Wave and Chain Heal reduced by $s2%.
 
 Name             : Jonat's Natural Focus (id=335893) [Spell Family (11), Passive] 
@@ -11525,8 +11684,10 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=832819)   : Apply Aura (6) | Proc Trigger Spell (42): Doom Winds
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 335903 | Target: Self (1)
-Description      : Dropping Windfury Totem grants you $335903s1% chance to gain Windfury Weapon and increases Windfury Weapon damage by $335903s3% for $335903d. 
-
+Description      : Dropping Windfury Totem grants you $335903s1% chance to gain Windfury Weapon and increases Windfury Weapon damage by $335903s3% for $335903d. 
+
+
+
 This can only occur once every $335904d.
 
 Name             : Doom Winds (id=335903) [Spell Family (11)] 
@@ -12482,8 +12643,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | AP Coefficient: 1.15000 | PvP Coefficient: 1.00000 | Target: Enemy (6)
 #2 (id=843158)   : Apply Aura (6) | Decrease Movement Speed% (33)
                    Base Value: -50 | Scaled Value: -50 | PvP Coefficient: 1.00000 | Mechanic: Snare | Target: Enemy (6)
-Description      : Strike your target with an icy blade, dealing $s1 Frost damage and snaring them by $s2% for $d.
-
+Description      : Strike your target with an icy blade, dealing $s1 Frost damage and snaring them by $s2% for $d.
+
+
+
 Successful Ice Strikes reset the cooldown of your Flame Shock and Frost Shock spells.
 Tooltip          : Movement speed reduced by $s2%.
 
@@ -12508,8 +12671,10 @@ Attributes       : ........ ........ x....... ........   ........ ........ .....
 Effects          :
 #1 (id=843166)   : Apply Aura (6) | Periodic Trigger Spell (23): Static Discharge every 0.5 seconds
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | AP Coefficient: 0.65000 | PvP Coefficient: 1.00000 | Trigger Spell: 342244 | Target: Self (1)
-Description      : Discharge excess energy from your Lightning Shield, dealing $342244s1 Nature damage to an enemy within $342244A1 yds every $t1 sec for $d.
-
+Description      : Discharge excess energy from your Lightning Shield, dealing $342244s1 Nature damage to an enemy within $342244A1 yds every $t1 sec for $d.
+
+
+
 Targets with your Flame Shock on them are preferred.
 Tooltip          : Discharging excess Lightning Shield energy at your enemies.
 

@@ -1,4 +1,4 @@
-SimulationCraft 915-01 for World of Warcraft 9.1.5.42010 Live (hotfix 2022-01-28/42010, git build shadowlands 9fcec2a45d)
+SimulationCraft 915-01 for World of Warcraft 9.1.5.42010 Live (hotfix 2022-01-28/42010)
 Name             : Invisibility (id=66) [Spell Family (3)] 
 Class            : Paladin, Mage
 School           : Arcane
@@ -81,14 +81,22 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.37500 | PvP Coefficient: 1.00000 | Radius: 12 yards | Target: Cone Front (104)
 Description      : Targets in a cone in front of you take $s1 Frost damage and have movement slowed by $212792m1% for $212792d.
 Tooltip          : Movement slowed by $s1%.
-Variables        : $arctic1=$?s31674[${1.01}][${1}]
-$arctic2=$?s31675[${1.02}][${$<arctic1>}]
-$arctic3=$?s31676[${1.03}][${$<arctic2>}]
-$arctic4=$?s31677[${1.04}][${$<arctic3>}]
-$arctic5=$?s31678[${1.05}][${$<arctic4>}]
-$piercing1=$?s11151[${1.02}][${1}]
-$piercing2=$?s12952[${1.04}][${$<piercing1>}]
-$piercing3=$?s12953[${1.06}][${$<piercing2>}]
+Variables        : $arctic1=$?s31674[${1.01}][${1}]
+
+$arctic2=$?s31675[${1.02}][${$<arctic1>}]
+
+$arctic3=$?s31676[${1.03}][${$<arctic2>}]
+
+$arctic4=$?s31677[${1.04}][${$<arctic3>}]
+
+$arctic5=$?s31678[${1.05}][${$<arctic4>}]
+
+$piercing1=$?s11151[${1.02}][${1}]
+
+$piercing2=$?s12952[${1.04}][${$<piercing1>}]
+
+$piercing3=$?s12953[${1.06}][${$<piercing2>}]
+
 $mult=${$<arctic5>*$<piercing3>}
 
 Name             : Frost Nova (id=122) [Spell Family (3)] 
@@ -122,14 +130,22 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.04478 | PvP Coefficient: 1.00000 | Radius: 0 - 12 yards | Target: At Caster (22) -> AOE enemy (15)
 Description      : Blasts enemies within $A2 yds of you for $s2 Frost damage and freezes them in place for $d. Damage may interrupt the freeze effect.
 Tooltip          : Frozen in place.
-Variables        : $arctic1=$?s31674[${1.01}][${1}]
-$arctic2=$?s31675[${1.02}][${$<arctic1>}]
-$arctic3=$?s31676[${1.03}][${$<arctic2>}]
-$arctic4=$?s31677[${1.04}][${$<arctic3>}]
-$arctic5=$?s31678[${1.05}][${$<arctic4>}]
-$piercing1=$?s11151[${1.02}][${1}]
-$piercing2=$?s12952[${1.04}][${$<piercing1>}]
-$piercing3=$?s12953[${1.06}][${$<piercing2>}]
+Variables        : $arctic1=$?s31674[${1.01}][${1}]
+
+$arctic2=$?s31675[${1.02}][${$<arctic1>}]
+
+$arctic3=$?s31676[${1.03}][${$<arctic2>}]
+
+$arctic4=$?s31677[${1.04}][${$<arctic3>}]
+
+$arctic5=$?s31678[${1.05}][${$<arctic4>}]
+
+$piercing1=$?s11151[${1.02}][${1}]
+
+$piercing2=$?s12952[${1.04}][${$<piercing1>}]
+
+$piercing3=$?s12953[${1.06}][${$<piercing2>}]
+
 $mult=${$<arctic5>*$<piercing3>}
 
 Name             : Fireball (id=133) [Spell Family (3)] 
@@ -157,8 +173,10 @@ Attributes       : ........ ........ x....... ........   ........ ........ .....
 Effects          :
 #1 (id=91)       : School Damage (2): fire
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.78000 | PvP Coefficient: 1.15000 | Chain Multiplier: 1 | Chain Targets: 1 | Target: Enemy (6)
-Description      : Throws a fiery ball that causes $s1 Fire damage.$?a157642[
-
+Description      : Throws a fiery ball that causes $s1 Fire damage.$?a157642[
+
+
+
 Each time your Fireball fails to critically strike a target, it gains a stacking $157644s1% increased critical strike chance. Effect ends when Fireball critically strikes.][]
 
 Name             : Remove Curse (id=475) [Spell Family (3)] 
@@ -210,9 +228,12 @@ Effects          :
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Target: Self (1)
 #2 (id=305)      : Dummy (3)
                    Base Value: 3 | Scaled Value: 3 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Conjures a Mana Gem that can be used to instantly restore $5405s1% mana, and holds up to $s2 charges.
-
-$@spellname118812
+Description      : Conjures a Mana Gem that can be used to instantly restore $5405s1% mana, and holds up to $s2 charges.
+
+
+
+$@spellname118812
+
 $@spelldesc118812
 
 Name             : Arcane Explosion (id=1449) [Spell Family (3)] 
@@ -240,8 +261,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.50232 | PvP Coefficient: 1.00000 | Radius: 0 - 10 yards | Target: At Caster (22) -> AOE enemy (15)
 #3 (id=740027)   : Energize Power (30)
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Misc Value: none | Target: Self (1)
-Description      : Causes an explosion of magic around the caster, dealing $s2 Arcane damage to all enemies within $A2 yards.$?a137021[
-
+Description      : Causes an explosion of magic around the caster, dealing $s2 Arcane damage to all enemies within $A2 yards.$?a137021[
+
+
+
 |cFFFFFFFFGenerates $s1 Arcane Charge if any targets are hit.|r][]
 
 Name             : Arcane Intellect (id=1459) [Spell Family (3)] 
@@ -265,8 +288,10 @@ Attributes       : ........ ........ x....... ........   ........ ..x..... .x...
 Effects          :
 #1 (id=459)      : Apply Aura (6) | Modify Total Stat% (137)
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000 | Misc Value 2: 0x8 | Radius: 100 yards | Target: Unknown(118)
-Description      : Infuses the target with brilliance, increasing their Intellect by $s1% for $d.  
-
+Description      : Infuses the target with brilliance, increasing their Intellect by $s1% for $d.  
+
+
+
 If target is in your party or raid, all party and raid members will be affected.
 Tooltip          : Intellect increased by $w1%.
 
@@ -568,11 +593,15 @@ Effects          :
                    Base Value: 22 | Scaled Value: 22 | PvP Coefficient: 1.00000 | Misc Value: 127 | Target: Self (1)
 #3 (id=355654)   : Apply Aura (6) | Modify Base Resistance (142)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 1 | Target: Self (1)
-Description      : Shields you with ice, absorbing $<shield> damage$?s235297[ and increasing your armor by $s3%][] for $d.
-
+Description      : Shields you with ice, absorbing $<shield> damage$?s235297[ and increasing your armor by $s3%][] for $d.
+
+
+
 Melee attacks against you reduce the attacker's movement speed by $205708s1%.
-Tooltip          : Absorbs $w1 damage.
-Melee attackers slowed by $205708s1%.$?s235297[
+Tooltip          : Absorbs $w1 damage.
+
+Melee attackers slowed by $205708s1%.$?s235297[
+
 Armor increased by $s3%.][]
 Variables        : $shield=${$s2/100*$MHP*(1+$@versadmg)}
 
@@ -608,7 +637,8 @@ Effects          :
                    Affected Spells: Cone of Cold (120), Frost Nova (122), Fireball (133), Arcane Explosion (1449), Flamestrike (2120), Scorch (2948), Arcane Missiles (7268), Pyroblast (11366), Arcane Blast (30451), Dragon's Breath (31661), Arcane Barrage (44425), Living Bomb (44461), Frozen Orb (84721), Fire Blast (108853), Nether Tempest (114923), Nether Tempest (114954), Icicle (148022), Comet Storm (153596), Arcane Orb (153640), Meteor Burn (155158), Supernova (157980), Blast Wave (157981), Ice Nova (157997), Blizzard (190357), Cinderstorm (198928), Ray of Frost (205021), Conflagration Flare Up (205345), Flame Patch (205472), Living Bomb (217694), Arcane Assault (225119), Conflagration (226757), Flurry (228354), Frostbolt (228597), Ice Lance (228598), Glacial Spike (228600), Frost Nova (235235), Blazing Barrier (235314), Time and Space (240689), Living Bomb (244813), Ebonbolt (257538), Phoenix Flames (257541), Phoenix Flames (257542), Trailing Embers (277703), Glacial Assault (279856), Radiant Spark (307443), Tormenting Backlash (317589), Fire Blast (319836), Agonizing Backlash (320035), Pyroblast (321712), Shifting Power (325130), Glacial Fragments (327498), Arcane Echo (342232), Meteor (351140)
                    Family Flags: 3
 Description      : For $d, you deal $s1% more spell damage$?a343208[ and your spells cost $s2% less mana][].
-Tooltip          : Spell damage increased by $w1%.
+Tooltip          : Spell damage increased by $w1%.
+
 $?a343208[Mana costs of your damaging spells reduced by $w2%.][]
 
 Name             : Evocation (id=12051) [Spell Family (3)] 
@@ -718,7 +748,8 @@ Effects          :
 #3 (id=260628)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Enemy (6)
 Description      : $@spelldesc12846
-Tooltip          : Deals $w1 Fire damage every $t1 sec.$?$w3>0[
+Tooltip          : Deals $w1 Fire damage every $t1 sec.$?$w3>0[
+
 Movement speed reduced by $w3%.][]
 
 Name             : Mastery: Ignite (id=12846) [Spell Family (3), Passive] 
@@ -747,8 +778,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
 #4 (id=817843)   : Dummy (3)
                    Base Value: 8 | Scaled Value: 8 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Your target burns for an additional ${$s1}.1% over $12654d of the total direct damage caused by your Fireball, Fire Blast, Scorch, Pyroblast$?s153561[, Meteor][]$?s257541[, Phoenix Flames][]$?s198929[, Cinderstorm][], and Flamestrike. If this effect is reapplied, any remaining damage will be added to the new Ignite.
-
+Description      : Your target burns for an additional ${$s1}.1% over $12654d of the total direct damage caused by your Fireball, Fire Blast, Scorch, Pyroblast$?s153561[, Meteor][]$?s257541[, Phoenix Flames][]$?s198929[, Cinderstorm][], and Flamestrike. If this effect is reapplied, any remaining damage will be added to the new Ignite.
+
+
+
 Phoenix Flames causes your Ignites to spread to $s4 nearby enemies.
 
 Name             : Shatter (id=12982) [Spell Family (3), Passive] 
@@ -906,10 +939,14 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.45700 | PvP Coefficient: 1.20000 | Chain Multiplier: 1 | Chain Targets: 1 | Target: Enemy (6)
 #2 (id=20029)    : Energize Power (30)
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Misc Value: none | Target: Self (1)
-Description      : Blasts the target with energy, dealing $30451s1 Arcane damage.
-
-Each Arcane Charge increases damage by $36032s1% and mana cost by $36032s5%, and reduces cast time by $36032s4%.
-
+Description      : Blasts the target with energy, dealing $30451s1 Arcane damage.
+
+
+
+Each Arcane Charge increases damage by $36032s1% and mana cost by $36032s5%, and reduces cast time by $36032s4%.
+
+
+
 |cFFFFFFFFGenerates 1 Arcane Charge.|r
 
 Name             : Ice Lance (id=30455) [Spell Family (3)] 
@@ -936,14 +973,21 @@ Attributes       : ........ ........ x.x..... ........   ...x...x ........ .....
 Effects          :
 #1 (id=20036)    : Server Side Script (77)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Chain Multiplier: 0.5 | Chain Targets: 1 | Target: Enemy (6)
-Description      : Quickly fling a shard of ice at the target, dealing $228598s1 Frost damage$?s56377[, and ${$228598s1*$56377m2/100} Frost damage to a second nearby target][].
-
+Description      : Quickly fling a shard of ice at the target, dealing $228598s1 Frost damage$?s56377[, and ${$228598s1*$56377m2/100} Frost damage to a second nearby target][].
+
+
+
 Ice Lance damage is tripled against frozen targets.
-Variables        : $masteryMod=${$cond($gt($pl,79),1,0)}
-$masteryPoints=${$44544m4/100}
-$masteryMult=${(1+$<masteryMod>*$<masteryPoints>)}
-$fingersMult=${(2.00*$<masteryMult>)}
-
+Variables        : $masteryMod=${$cond($gt($pl,79),1,0)}
+
+$masteryPoints=${$44544m4/100}
+
+$masteryMult=${(1+$<masteryMod>*$<masteryPoints>)}
+
+$fingersMult=${(2.00*$<masteryMult>)}
+
+
+
 
 
 Name             : Slow (id=31589) [Spell Family (3)] 
@@ -1181,10 +1225,14 @@ Effects          :
                    Affected Spells: Arcane Blast (30451)
                    Family Flags: 29
 Description      : $@spelldesc114664
-Tooltip          : Increases the damage of Arcane Blast, Arcane Missiles, Arcane Explosion, and Arcane Barrage by $36032w1%.
-
-Increases the mana cost of Arcane Blast by $36032w2%$?{$w5<0}[, and reduces the cast time of Arcane Blast by $w5%.][.]
-
+Tooltip          : Increases the damage of Arcane Blast, Arcane Missiles, Arcane Explosion, and Arcane Barrage by $36032w1%.
+
+
+
+Increases the mana cost of Arcane Blast by $36032w2%$?{$w5<0}[, and reduces the cast time of Arcane Blast by $w5%.][.]
+
+
+
 Increases the number of targets hit by Arcane Barrage for 50% damage by $36032w3.
 
 Name             : Hypothermia (id=41425) [Spell Family (3)] 
@@ -1254,10 +1302,14 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.72800 | PvP Coefficient: 1.00000 | Chain Multiplier: 1 | Chain Targets: 1 | Target: Enemy (6)
 #2 (id=726826)   : Dummy (3)
                    Base Value: 40 | Scaled Value: 40 | PvP Coefficient: 1.00000 | Chain Multiplier: 1 | Target: Enemy (6)
-Description      : Launches bolts of arcane energy at the enemy target, causing $s1 Arcane damage. 
-
-For each Arcane Charge, deals $36032s2% additional damage$?a321526[, grants you ${$321526s1/100}.1% of your maximum mana,][]$?a231564[ and hits $36032s3 additional nearby $Ltarget:targets; for $s2% of its damage][].
-
+Description      : Launches bolts of arcane energy at the enemy target, causing $s1 Arcane damage. 
+
+
+
+For each Arcane Charge, deals $36032s2% additional damage$?a321526[, grants you ${$321526s1/100}.1% of your maximum mana,][]$?a231564[ and hits $36032s3 additional nearby $Ltarget:targets; for $s2% of its damage][].
+
+
+
 |cFFFFFFFFConsumes all Arcane Charges.|r
 
 Name             : Pyroblast Clearcasting Driver (id=44448) [Spell Family (3), Passive, Hidden] 
@@ -1304,8 +1356,10 @@ Attributes       : ........ ........ x....... ..x.....   ........ ........ .....
 Effects          :
 #1 (id=36371)    : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : The target becomes a Living Bomb, taking $217694o1 Fire damage over $217694d, and then exploding to deal an additional $44461s2 Fire damage to the target and reduced damage to all other enemies within $44461A2 yards.
-
+Description      : The target becomes a Living Bomb, taking $217694o1 Fire damage over $217694d, and then exploding to deal an additional $44461s2 Fire damage to the target and reduced damage to all other enemies within $44461A2 yards.
+
+
+
 Other enemies hit by this explosion also become a Living Bomb, but this effect cannot spread further.
 Tooltip          : Causes $w1 Fire damage every $t1 sec. After $d, the target explodes, causing $w2 Fire damage to the target and all other enemies within $44461A2 yards$?$w3>0[, and spreading Living Bomb][].
 
@@ -1394,8 +1448,10 @@ Effects          :
                    Base Value: 3 | Scaled Value: 3 | PvP Coefficient: 1.00000 | Mechanic: Snare | Target: Enemy (6)
 #2 (id=376737)   : Trigger Missiles (32)
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.1) | PvP Coefficient: 1.00000 | Trigger Spell: 228354 | Target: Enemy (6)
-Description      : Unleash a flurry of ice, striking the target $s1 times for a total of ${$228354s2*$m1} Frost damage. Each hit reduces the target's movement speed by $228354s1% for $228354d.$?a231584[
-
+Description      : Unleash a flurry of ice, striking the target $s1 times for a total of ${$228354s2*$m1} Frost damage. Each hit reduces the target's movement speed by $228354s1% for $228354d.$?a231584[
+
+
+
 While Brain Freeze is active, Flurry applies Winter's Chill, causing your target to take damage from your spells as if it were frozen.][]
 
 Name             : Ice Block (id=45438) [Spell Family (3)] 
@@ -1435,10 +1491,13 @@ Effects          :
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Target: Self (1)
 #7 (id=877190)   : Apply Aura (6) | Periodic Heal% (20): every 1 seconds
                    Base Value: 6 | Scaled Value: 6 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Encases you in a block of ice, protecting you from all attacks and damage for $d, but during that time you cannot attack, move, or cast spells.  
-
+Description      : Encases you in a block of ice, protecting you from all attacks and damage for $d, but during that time you cannot attack, move, or cast spells.  
+
+
+
 Causes Hypothermia, preventing you from recasting Ice Block for $41425d.
-Tooltip          : Immune to all attacks and damage.
+Tooltip          : Immune to all attacks and damage.
+
 Cannot attack, move, or use spells.
 
 Name             : Heating Up (id=48107) 
@@ -1525,8 +1584,10 @@ Effects          :
 #3 (id=843300)   : Apply Aura (6) | Modify Damage Taken% (87)
                    Base Value: -20 | Scaled Value: -20 | PvP Coefficient: 1.00000 | Misc Value: 0x7f | Target: Self (1)
                    Affected School(s): All
-Description      : Creates $s2 copies of you nearby for $55342d, which cast spells and attack your enemies.
-
+Description      : Creates $s2 copies of you nearby for $55342d, which cast spells and attack your enemies.
+
+
+
 While your images are active damage taken is reduced by $s3%. Taking direct damage will cause one of your images to dissipate.
 Tooltip          : Damage taken is reduced by $s3% while your images are active.
 
@@ -1574,8 +1635,10 @@ Effects          :
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000 | Target: Self (1)
                    Affected Spells: Ice Lance (30455), Icicle (148022), Ice Lance (228598)
                    Family Flags: 17, 115
-Description      : Your Ice Lance and Icicles now deal $s3% increased damage, and hit a second nearby target for ${$s2-15}% of their damage.
-
+Description      : Your Ice Lance and Icicles now deal $s3% increased damage, and hit a second nearby target for ${$s2-15}% of their damage.
+
+
+
 Your Ebonbolt and Glacial Spike also hit a second nearby target for $s2% of its damage.
 
 Name             : Glyph of Crittermorph (id=56382) [Spell Family (3), Passive, Hidden] 
@@ -1738,7 +1801,8 @@ Effects          :
 #6 (id=879224)   : Apply Aura (6) | Modify Damage Taken% (87)
                    Base Value: 20 | Scaled Value: 20 | Misc Value: 0x7f | Target: Self (1)
                    Affected School(s): All
-Description      : Reduces the damage your pet takes from area of effect attacks by an additional $s1%.
+Description      : Reduces the damage your pet takes from area of effect attacks by an additional $s1%.
+
 Reduces the range at which enemies detect your pet.
 
 Name             : Viciousness (desc=Racial Passive) (id=68975) [Passive] 
@@ -1836,10 +1900,14 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
                    Affected Spells: Frozen Orb (84721)
                    Family Flags: 78
-Description      : Casting Frostbolt or Flurry grants you an Icicle. Casting Ice Lance causes all Icicles stored to begin launching at the target, each dealing $148022s1 Frost damage.
-
-Up to $s2 Icicles can be stored. Any excess Icicles gained will be automatically launched.$?a321684[
-
+Description      : Casting Frostbolt or Flurry grants you an Icicle. Casting Ice Lance causes all Icicles stored to begin launching at the target, each dealing $148022s1 Frost damage.
+
+
+
+Up to $s2 Icicles can be stored. Any excess Icicles gained will be automatically launched.$?a321684[
+
+
+
 Increases the damage of Frozen Orb by $321684s1%][]
 
 Name             : Clearcasting (id=79684) [Spell Family (3), Passive] 
@@ -1865,8 +1933,10 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=68492)    : Apply Aura (6) | Dummy (4)
                    Base Value: 200 | Scaled Value: 200 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : For each ${$c*100/$s1} mana you spend, you have a 1% chance to gain Clearcasting, making your next Arcane Missiles or Arcane Explosion free and channel $277726s1% faster.$?a321758[
-
+Description      : For each ${$c*100/$s1} mana you spend, you have a 1% chance to gain Clearcasting, making your next Arcane Missiles or Arcane Explosion free and channel $277726s1% faster.$?a321758[
+
+
+
 Arcane Missiles fires $321758s2 additional missile.][]
 
 Name             : Time Warp (id=80353) [Spell Family (3)] 
@@ -1897,13 +1967,19 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
 #4 (id=809236)   : Apply Aura (6) | Unknown(399)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Warp the flow of time, increasing haste by $s1% $?a320919[and time rate by $s4% ][]for all party and raid members for $d.
-
-Allies will be unable to benefit from Bloodlust, Heroism, or Time Warp again for $57724d.$?a320920[
-
+Description      : Warp the flow of time, increasing haste by $s1% $?a320919[and time rate by $s4% ][]for all party and raid members for $d.
+
+
+
+Allies will be unable to benefit from Bloodlust, Heroism, or Time Warp again for $57724d.$?a320920[
+
+
+
 When the effect ends, all affected players are frozen in time for $356346d.][]
-Tooltip          : Haste increased by $w1%. $?$W4>0[Time rate increased by $w4%.][]$?$W3=1[
-
+Tooltip          : Haste increased by $w1%. $?$W4>0[Time rate increased by $w4%.][]$?$W3=1[
+
+
+
 When the effect ends, all affected players are frozen in time for $356346d.][]
 
 Name             : Temporal Displacement (id=80354) 
@@ -1981,10 +2057,12 @@ Attributes       : ........ ........ x....... ........   ...x...x ........ .....
                  : ........ ........ ........ ........   
                  : Not Shapeshifted (16), No Redirection (35), No Reflection (39), No Aura Icon (60), Ignore Line of Sight (66), No Initial Threat (86), No Aura Log (202), Allow Class Ability Procs (416)
 Effects          :
-#1 (id=85616)    : Unknown(179)
+#1 (id=85616)    : Create Area Trigger (179)
                    Base Value: 40 | Scaled Value: 40 | PvP Coefficient: 1.00000 | Misc Value: 8661 | Target: Unknown(47)
-Description      : Launches an orb of swirling ice up to $s1 yards forward which deals up to ${20*$84721s1} Frost damage to all enemies it passes through. Deals reduced damage beyond $84721s2 targets. Grants 1 charge of Fingers of Frost when it first damages an enemy.
-
+Description      : Launches an orb of swirling ice up to $s1 yards forward which deals up to ${20*$84721s1} Frost damage to all enemies it passes through. Deals reduced damage beyond $84721s2 targets. Grants 1 charge of Fingers of Frost when it first damages an enemy.
+
+
+
 Enemies damaged by the Frozen Orb are slowed by $289308s1% for $289308d.
 
 Name             : Frozen Orb (id=84721) [Spell Family (3)] 
@@ -2005,7 +2083,8 @@ Attributes       : ........ ........ x......x x..x....   .....x.x ........ .....
                  : Not Shapeshifted (16), Allow Cast While Dead (23), Allow While Mounted (24), Allow While Sitting (27), Allow While Stealthed (37), No Reflection (39), Ignore Line of Sight (66), Allow While Invisible (78), Allow While Not Shapeshifted (caster form) (83), Not an Action (92), Active Threat (94), Not a Proc (105), Do Not Display Range (126), No Cast Log (128), Allow Cast While Casting (135), Not In Spellbook (143), Allow While Stunned (163), Allow While Fleeing (177), Allow While Confused (178), Always AOE Line of Sight (186), No Cooldown On Tooltip (192), Allow While Riding Vehicle (204), Show Mechanic as Combat Text (213), Allow While Charmed (261), Aura Points On Client (268), Allow While Banished Aura State (299), Allow Cast While Channeling (308), Allow While Stunned By Horror Mechanic (342), Don't Cancel When All Effects are Disabled (353), Allow While Stunned by Stun Mechanic (378), Don't close loot window (379), Allow Class Ability Procs (416), Allow While Feared By Fear Mechanic (417)
 Effects          :
 #1 (id=85629)    : School Damage (2): frost
-                   Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.16270 | PvP Coefficient: 1.00000 | Radius: 8.5 yards | Target: AOE enemy (instant) (16)
+                   Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.14318 | PvP Coefficient: 1.00000 | Radius: 8.5 yards | Target: AOE enemy (instant) (16)
+Hotfixed         : SP Coefficient (0.15 -> 0.143176)
 #2 (id=818474)   : Dummy (3)
                    Base Value: 8 | Scaled Value: 8 | PvP Coefficient: 1.00000
 Description      : $@spelldesc84714
@@ -2034,10 +2113,14 @@ Effects          :
                    Base Value: 35 | Scaled Value: 35 | PvP Coefficient: 1.00000 | Target: Self (1)
 #3 (id=302842)   : Trigger Spell (64): Blazing Speed
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 108843 | Target: Self (1)
-Description      : Fatal damage instead brings you to $86949s2% health and then burns you for $87023o1% of your maximum health over $87023d.
-
-While burning, movement slowing effects are suppressed and your movement speed is increased by $108843s1%.
-
+Description      : Fatal damage instead brings you to $86949s2% health and then burns you for $87023o1% of your maximum health over $87023d.
+
+
+
+While burning, movement slowing effects are suppressed and your movement speed is increased by $108843s1%.
+
+
+
 This effect cannot occur more than once every $87024d.
 
 Name             : Cauterize (id=87023) 
@@ -2152,8 +2235,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.21000 | PvP Coefficient: 1.00000 | Target: Enemy (6)
 #2 (id=90298)    : Trigger Spell (64): Arcane Charge
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 36032 | Target: Self (1)
-Description      : Blasts the target with energy, dealing $30451s1 Arcane damage. Generates an Arcane Charge.
-
+Description      : Blasts the target with energy, dealing $30451s1 Arcane damage. Generates an Arcane Charge.
+
+
+
 Arcane Blast's damage is increased by $36032s1% per Arcane Charge, and its mana cost is increased by $36032s2% per Arcane Charge.
 
 Name             : Wizardry (desc=Passive) (id=89744) [Passive, Hidden] 
@@ -2305,8 +2390,10 @@ Attributes       : ........ ........ x....... ........   ........ ........ .....
 Effects          :
 #1 (id=120062)   : School Damage (2): fire
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.91080 | PvP Coefficient: 0.86957 | Target: Enemy (6)
-Description      : Blasts the enemy for $s1 Fire damage. 
-
+Description      : Blasts the enemy for $s1 Fire damage. 
+
+
+
 |cFFFFFFFFFire:|r Castable while casting other spells.$?a231568[ Always deals a critical strike.][]
 
 Name             : Alter Time (id=108978) [Spell Family (3)] 
@@ -2385,8 +2472,10 @@ Attributes       : ........ ........ x...x... ........   ........ ..x..... .x...
 Effects          :
 #1 (id=123208)   : Trigger Spell (64): Greater Invisibility
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 110960 | Target: Self (1)
-Description      : Makes you invisible and untargetable for $110960d, removing all threat. Any action taken cancels this effect.
-
+Description      : Makes you invisible and untargetable for $110960d, removing all threat. Any action taken cancels this effect.
+
+
+
 You take $113862s1% reduced damage while invisible and for 3 sec after reappearing.
 
 Name             : Greater Invisibility (id=110960) [Spell Family (3)] 
@@ -2441,10 +2530,14 @@ Effects          :
                    Base Value: 10 | Scaled Value: 10 | PvP Coefficient: 1.00000
 #4 (id=163932)   : Dummy (3)
                    Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000
-Description      : Frostbolt has a $s1% chance and Frozen Orb damage has a $s2% to grant a charge of Fingers of Frost.
-
-Fingers of Frost causes your next Ice Lance to deal damage as if the target were frozen.
-
+Description      : Frostbolt has a $s1% chance and Frozen Orb damage has a $s2% to grant a charge of Fingers of Frost.
+
+
+
+Fingers of Frost causes your next Ice Lance to deal damage as if the target were frozen.
+
+
+
 Maximum $44544s1 charges.
 
 Name             : Ring of Frost (id=113724) [Spell Family (3)] 
@@ -2478,8 +2571,10 @@ Effects          :
                    Base Value: 10 | Scaled Value: 10 | PvP Coefficient: 1.00000 | Trigger Spell: 136511 | Target: Self (1)
 #3 (id=131422)   : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Radius: 6.5 - 8 yards | Target: Unknown(87)
-Description      : Summons a Ring of Frost for $d at the target location. Enemies entering the ring are incapacitated for $82691d. Limit 10 targets.
-
+Description      : Summons a Ring of Frost for $d at the target location. Enemies entering the ring are incapacitated for $82691d. Limit 10 targets.
+
+
+
 When the incapacitate expires, enemies are slowed by $321329s1% for $321329d.
 
 Name             : Greater Invisibility (id=113862) [Spell Family (3)] 
@@ -2532,8 +2627,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | SP Coefficient: 0.01422 | PvP Coefficient: 1.00000 | Radius: 0 - 8 yards | Target: At Enemy (53) -> AOE enemy (instant) (16)
 #2 (id=220453)   : Apply Aura (6) | Dummy (4)
                    Base Value: 10 | Scaled Value: 10 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : Places a Nether Tempest on the target which deals $114923o1 Arcane damage over $114923d to the target and nearby enemies within 10 yards. Limit 1 target. Deals reduced damage to secondary targets.
-
+Description      : Places a Nether Tempest on the target which deals $114923o1 Arcane damage over $114923d to the target and nearby enemies within 10 yards. Limit 1 target. Deals reduced damage to secondary targets.
+
+
+
 Damage increased by $36032s1% per Arcane Charge.
 Tooltip          : Deals $w1 Arcane damage and an additional $w1 Arcane damage to all enemies within $114954A1 yards every $t sec.
 
@@ -2584,14 +2681,16 @@ Attributes       : ........ ........ x....... .......x   ........ ........ .....
                  : ........ ........ ........ ........   
                  : Not Shapeshifted (16), No Aura Cancel (31), Do Not Display Range (126), Always Show Ground Texture (190), Caster Death Cancels Persistent Area Auras (347), Allow Class Ability Procs (416)
 Effects          :
-#1 (id=131312)   : Unknown(179)
+#1 (id=131312)   : Create Area Trigger (179)
                    Base Value: 2 | Scaled Value: 2 | PvP Coefficient: 1.00000 | Misc Value: 304 | Target: Unknown(62)
 #2 (id=170598)   : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Radius: 8 yards | Target: Unknown(62)
 #3 (id=177659)   : Summon (28)
                    Base Value: 2 | Scaled Value: 2 | PvP Coefficient: 1.00000 | Misc Value: 60199 | Misc Value 2: 0xc89 | Target: Unknown(62)
-Description      : Places a Rune of Power on the ground for $116011d which increases your spell damage by $116014s1% while you stand within 8 yds.
-
+Description      : Places a Rune of Power on the ground for $116011d which increases your spell damage by $116014s1% while you stand within 8 yds.
+
+
+
 Casting $?a137021[Arcane Power]?a137019[Combustion][Icy Veins] will also create a Rune of Power at your location.
 
 Name             : Rune of Power (id=116014) [Spell Family (3)] 
@@ -2624,7 +2723,8 @@ Effects          :
                    Affected Spells: Cone of Cold (120), Frost Nova (122), Fireball (133), Arcane Explosion (1449), Flamestrike (2120), Scorch (2948), Arcane Missiles (7268), Pyroblast (11366), Arcane Blast (30451), Dragon's Breath (31661), Arcane Barrage (44425), Living Bomb (44461), Frozen Orb (84721), Fire Blast (108853), Nether Tempest (114923), Nether Tempest (114954), Icicle (148022), Comet Storm (153596), Arcane Orb (153640), Meteor Burn (155158), Supernova (157980), Blast Wave (157981), Ice Nova (157997), Blizzard (190357), Cinderstorm (198928), Ray of Frost (205021), Conflagration Flare Up (205345), Flame Patch (205472), Living Bomb (217694), Arcane Assault (225119), Conflagration (226757), Flurry (228354), Frostbolt (228597), Ice Lance (228598), Glacial Spike (228600), Frost Nova (235235), Blazing Barrier (235314), Time and Space (240689), Living Bomb (244813), Ebonbolt (257538), Phoenix Flames (257541), Phoenix Flames (257542), Trailing Embers (277703), Glacial Assault (279856), Radiant Spark (307443), Tormenting Backlash (317589), Fire Blast (319836), Agonizing Backlash (320035), Pyroblast (321712), Shifting Power (325130), Glacial Fragments (327498), Arcane Echo (342232), Meteor (351140)
                    Family Flags: 3
 Description      : $@spelldesc116011
-Tooltip          : Spell damage increased by $w1%.$?$w2=0[][
+Tooltip          : Spell damage increased by $w1%.$?$w2=0[][
+
 Health restored by $w2% per second.]
 
 Name             : Incanter's Flow (id=116267) [Spell Family (3)] 
@@ -2680,8 +2780,10 @@ Effects          :
                    Base Value: 15 | Scaled Value: 15 | PvP Coefficient: 1.00000 | Target: Self (1)
 #2 (id=132773)   : Apply Aura (6) | Modify Combat Rating Multiplier (405)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 1792 | Target: Self (1)
-Description      : Your spells have a $s1% increased chance to deal a critical strike.$?s231630[
-
+Description      : Your spells have a $s1% increased chance to deal a critical strike.$?s231630[
+
+
+
 You gain $s2% more of the Critical Strike stat from all sources.][]
 
 Name             : Conjured Items (id=118812) 
@@ -3134,12 +3236,14 @@ Attributes       : ........ ........ x....... ........   ........ ........ .....
                  : ........ ........ ........ ........   
                  : Not Shapeshifted (16), Bypass Visibility Check (320), Allow Class Ability Procs (416)
 Effects          :
-#1 (id=212907)   : Unknown(179)
+#1 (id=212907)   : Create Area Trigger (179)
                    Base Value: 100 | Scaled Value: 100 | PvP Coefficient: 1.00000 | Misc Value: 1612 | Target: Custom (18) -> AOE enemy (instant) (16)
 #2 (id=293313)   : Energize Power (30)
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Misc Value: none | Target: Self (1)
-Description      : Launches an Arcane Orb forward from your position, traveling up to 40 yards, dealing $153640s1 Arcane damage to enemies it passes through.
-
+Description      : Launches an Arcane Orb forward from your position, traveling up to 40 yards, dealing $153640s1 Arcane damage to enemies it passes through.
+
+
+
 |cFFFFFFFFGrants 1 Arcane Charge when cast and every time it deals damage.|r
 
 Name             : Arcane Orb (id=153640) [Spell Family (3)] 
@@ -3239,8 +3343,10 @@ Effects          :
                    Base Value: 10000 | Scaled Value: 10000 | PvP Coefficient: 1.00000 | Misc Value: 1 | Target: Self (1)
                    Affected Spells: Icy Veins (12472), Ice Form (198144)
                    Family Flags: 46
-Description      : Icy Veins' duration is increased by ${$s2/1000} sec.
-
+Description      : Icy Veins' duration is increased by ${$s2/1000} sec.
+
+
+
 Your Ice Lances against frozen targets extend your Icy Veins by an additional $s1 sec.
 
 Name             : Meteor Burn (id=155158) [Spell Family (3)] 
@@ -3532,7 +3638,7 @@ Attributes       : .......x ........ .......x x..x....   .....x.. ........ .....
                  : ........ ........ ........ ........   
                  : Do Not Display (Spellbook, Aura Icon, Combat Log) (7), Allow Cast While Dead (23), Allow While Mounted (24), Allow While Sitting (27), Allow While Stealthed (37), Allow While Invisible (78), Allow While Not Shapeshifted (caster form) (83), Not an Action (92), DoT Stacking Rule (103), Allow Cast While Casting (135), Allow While Stunned (163), Do Not Display Duration (170), Allow While Fleeing (177), Allow While Confused (178), Allow While Riding Vehicle (204), Allow While Charmed (261), Periodic Can Crit (265), Aura Points On Client (268), Allow While Banished Aura State (299), Allow Cast While Channeling (308), Allow While Stunned By Horror Mechanic (342), Allow While Stunned by Stun Mechanic (378), Allow Class Ability Procs (416), Allow While Feared By Fear Mechanic (417)
 Effects          :
-#1 (id=250555)   : Unknown(179)
+#1 (id=250555)   : Create Area Trigger (179)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 1712 | Target: Unknown(87)
 Description      : $@spelldesc153561
 Tooltip          : Burning for $w1 Fire damage every $t1 sec.
@@ -3553,7 +3659,7 @@ Attributes       : .......x ........ ........ ........   ........ ........ .....
                  : ........ ........ ........ ........   
                  : Do Not Display (Spellbook, Aura Icon, Combat Log) (7), Not an Action (92), Aura Points On Client (268), Allow Class Ability Procs (416)
 Effects          :
-#1 (id=253822)   : Unknown(179)
+#1 (id=253822)   : Create Area Trigger (179)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 3467 | Target: Unknown(87)
 
 Name             : Rule of Threes (id=187292) [Spell Family (3), Hidden] 
@@ -3628,7 +3734,8 @@ Effects          :
 #3 (id=290009)   : Apply Aura (6) | Periodic Dummy (226): every 0.5 seconds
                    Base Value: 50 | Scaled Value: 50 | PvP Coefficient: 1.00000 | Target: Self (1)
 Description      : Engulfs you in flames for $d, increasing your spells' critical strike chance by $s1% and granting you Mastery equal to $s3% your Critical Strike stat. Castable while casting other spells.
-Tooltip          : Critical Strike chance of your spells increased by $w1%.$?a231630[
+Tooltip          : Critical Strike chance of your spells increased by $w1%.$?a231630[
+
 Mastery increased by $w2.][]
 
 Name             : Conjure Refreshment (id=190336) [Spell Family (3)] 
@@ -3681,11 +3788,13 @@ Attributes       : ........ ........ x....... ........   ........ ..x..... .....
 Effects          :
 #1 (id=278845)   : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Radius: 8 yards | Target: Unknown(87) -> AOE enemy (instant) (16)
-#2 (id=278849)   : Unknown(179)
+#2 (id=278849)   : Create Area Trigger (179)
                    Base Value: 50 | Scaled Value: 50 | PvP Coefficient: 1.00000 | Misc Value: 4658 | Radius: 0 - 8 yards | Target: Unknown(87) -> AOE enemy (instant) (16)
-Description      : Ice shards pelt the target area, dealing ${$190357m1*8} Frost damage over $d and reducing movement speed by $12486s1% for $12486d.$?a236662[
-
-Each time Blizzard deals damage, the cooldown of Frozen Orb is reduced by ${$236662s1/100}.1 sec.][]
+Description      : Ice shards pelt the target area, dealing ${$190357m1*8} Frost damage over $d and reducing movement speed by $12486s1% for $12486d.$?a236662[
+
+
+
+Each time Blizzard deals damage, the cooldown of Frozen Orb is reduced by ${$236662s1/100}.2 sec.][]
 
 Name             : Blizzard (id=190357) [Spell Family (3)] 
 Class            : Mage
@@ -3706,7 +3815,8 @@ Attributes       : ........ ........ .......x x..x....   ...x.x.x ........ .....
                  : Allow Cast While Dead (23), Allow While Mounted (24), Allow While Sitting (27), No Redirection (35), Allow While Stealthed (37), No Reflection (39), Ignore Line of Sight (66), Allow While Invisible (78), Allow While Not Shapeshifted (caster form) (83), Active Threat (94), Not a Proc (105), Treat As Periodic (121), Do Not Display Range (126), Allow Cast While Casting (135), Not In Spellbook (143), Allow While Stunned (163), Allow While Fleeing (177), Allow While Confused (178), Always AOE Line of Sight (186), Allow While Riding Vehicle (204), Show Mechanic as Combat Text (213), Allow While Charmed (261), Allow While Banished Aura State (299), Allow Cast While Channeling (308), Allow While Stunned By Horror Mechanic (342), Allow While Stunned by Stun Mechanic (378), Allow Class Ability Procs (416), Allow While Feared By Fear Mechanic (417)
 Effects          :
 #1 (id=278848)   : School Damage (2): frost
-                   Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.12800 | PvP Coefficient: 1.00000 | Radius: 0 - 8 yards | Target: Unknown(87) -> AOE enemy (instant) (16)
+                   Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.11264 | PvP Coefficient: 1.00000 | Radius: 0 - 8 yards | Target: Unknown(87) -> AOE enemy (instant) (16)
+Hotfixed         : SP Coefficient (0.1216 -> 0.11264)
 Description      : $@spelldesc190356
 
 Name             : Arcane Charge (id=190427) [Spell Family (3), Passive] 
@@ -3788,8 +3898,10 @@ Attributes       : ......x. ........ ..x..... ........   ........ ........ .....
 Effects          :
 #1 (id=279088)   : Apply Aura (6) | Dummy (4)
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Frostbolt has a $m1% chance to empower your next Flurry to be instant cast$?a231584[,][ and] deal $190446s2% increased damage$?a231584[, and apply Winter's Chill to the target. 
-
+Description      : Frostbolt has a $m1% chance to empower your next Flurry to be instant cast$?a231584[,][ and] deal $190446s2% increased damage$?a231584[, and apply Winter's Chill to the target. 
+
+
+
 Winter's Chill causes the target to take damage from your spells as if it were frozen][].
 
 Name             : Mastery: Savant (id=190740) [Spell Family (3), Passive] 
@@ -3823,10 +3935,14 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | SP Coefficient: 1.00000 | PvP Coefficient: 1.00000 | Target: Self (1)
                    Affected Spells: Arcane Explosion (1449), Arcane Missiles (7268), Arcane Orb (153640), Supernova (157980), Time and Space (240689), Radiant Spark (307443), Touch of the Magi (321507)
                    Family Flags: 12, 21, 80, 83, 86, 121
-Description      : Increases your Mana regeneration rate and maximum Mana by ${$m1}.1%.
-
-Arcane Charges increase the damage of Arcane Blast by an additional ${$m2}.1% and Arcane Barrage by ${$m3}.1%.
-
+Description      : Increases your Mana regeneration rate and maximum Mana by ${$m1}.1%.
+
+
+
+Arcane Charges increase the damage of Arcane Blast by an additional ${$m2}.1% and Arcane Barrage by ${$m3}.1%.
+
+
+
 Increases all other Arcane damage by ${$s5}.1%
 
 Name             : Molten Skin (id=194315) [Spell Family (3), Passive] 
@@ -3961,8 +4077,10 @@ Attributes       : ........ ........ ..x..... ..x..x..   ........ ..x..... .....
 Effects          :
 #1 (id=286705)   : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Tooltip          : Increases the mana cost of Arcane Blast by $36032w2%$?{$w5<0}[, and reduces the cast time of Arcane Blast by $w5%.][.]
-
+Tooltip          : Increases the mana cost of Arcane Blast by $36032w2%$?{$w5<0}[, and reduces the cast time of Arcane Blast by $w5%.][.]
+
+
+
 Increases the number of targets hit by Arcane Barrage for 50% damage by $36032w3.
 
 Name             : Cinderstorm (id=198928) [Spell Family (3)] 
@@ -4008,17 +4126,17 @@ Attributes       : ........ ........ ........ ........   ........ ........ .....
                  : ........ ........ ........ ........   
                  : Bypass Visibility Check (320), Allow Class Ability Procs (416)
 Effects          :
-#1 (id=292757)   : Unknown(179)
+#1 (id=292757)   : Create Area Trigger (179)
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000 | Misc Value: 5487 | Target: Custom (18)
-#2 (id=292777)   : Unknown(179)
+#2 (id=292777)   : Create Area Trigger (179)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 5489 | Target: Custom (18)
-#3 (id=292778)   : Unknown(179)
+#3 (id=292778)   : Create Area Trigger (179)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 5490 | Target: Custom (18)
-#4 (id=292779)   : Unknown(179)
+#4 (id=292779)   : Create Area Trigger (179)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 5491 | Target: Custom (18)
-#5 (id=292780)   : Unknown(179)
+#5 (id=292780)   : Create Area Trigger (179)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 5492 | Target: Custom (18)
-#6 (id=292781)   : Unknown(179)
+#6 (id=292781)   : Create Area Trigger (179)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 5493 | Target: Custom (18)
 Description      : Throws a spread of 6 cinders that travel in an arc, each dealing $198928s1 Fire damage to enemies it hits. Damage increased by $s1% if the target is affected by your Ignite.
 
@@ -4045,10 +4163,14 @@ Attributes       : ........ ........ x....... ........   ...x...x ........ .....
 Effects          :
 #1 (id=294013)   : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Chain Multiplier: 0.8 | Chain Targets: 1 | Target: Enemy (6)
-Description      : Conjures a massive spike of ice, and merges your current Icicles into it. It impales your target, dealing $228600s1 damage plus all of the damage stored in your Icicles, and freezes the target in place for $228600d. Damage may interrupt the freeze effect.
-
-Requires 5 Icicles to cast.
-
+Description      : Conjures a massive spike of ice, and merges your current Icicles into it. It impales your target, dealing $228600s1 damage plus all of the damage stored in your Icicles, and freezes the target in place for $228600d. Damage may interrupt the freeze effect.
+
+
+
+Requires 5 Icicles to cast.
+
+
+
 |cFFFFFFFFPassive:|r Ice Lance no longer launches Icicles.
 Tooltip          : Frozen in place.
 
@@ -4125,10 +4247,13 @@ Effects          :
                    Base Value: 2 | Scaled Value: 2 | PvP Coefficient: 1.00000
 #4 (id=740366)   : Dummy (3)
                    Base Value: -60 | Scaled Value: -60 | PvP Coefficient: 1.00000
-Description      : Channel an icy beam at the enemy for $d, dealing $s2 Frost damage every $t2 sec and slowing movement by $s4%. Each time Ray of Frost deals damage, its damage and snare increases by $208141s1%.
-
+Description      : Channel an icy beam at the enemy for $d, dealing $s2 Frost damage every $t2 sec and slowing movement by $s4%. Each time Ray of Frost deals damage, its damage and snare increases by $208141s1%.
+
+
+
 Generates $s3 charges of Fingers of Frost over its duration.
-Tooltip          : Movement slowed by $w1%.
+Tooltip          : Movement slowed by $w1%.
+
 Taking $w2 Frost damage every $t2 sec.
 
 Name             : Arcane Familiar (id=205022) [Spell Family (3)] 
@@ -4175,8 +4300,10 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=302650)   : Apply Aura (6) | Proc Trigger Spell (42): Conflagration
                    Base Value: 10 | Scaled Value: 10 | PvP Coefficient: 1.00000 | Trigger Spell: 226757 | Target: Self (1)
-Description      : Fireball applies Conflagration to the target, dealing an additional $226757o1 Fire damage over $226757d.
-
+Description      : Fireball applies Conflagration to the target, dealing an additional $226757o1 Fire damage over $226757d.
+
+
+
 Enemies affected by either Conflagration or Ignite have a $s1% chance to flare up and deal $205345s1 Fire damage to nearby enemies.
 
 Name             : Lonely Winter (id=205024) [Spell Family (3), Passive] 
@@ -4420,7 +4547,7 @@ Attributes       : ........ ........ x....... ........   ...x...x ........ .....
                  : ........ ........ ........ ........   
                  : Not Shapeshifted (16), No Redirection (35), No Reflection (39), Spell Haste Affects Periodic (173), Always Show Ground Texture (190), Periodic Can Crit (265), Aura Points On Client (268), Caster Death Cancels Persistent Area Auras (347), Allow Class Ability Procs (416), Periodic Refresh Extends Duration (436)
 Effects          :
-#1 (id=303425)   : Unknown(179)
+#1 (id=303425)   : Create Area Trigger (179)
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Misc Value: 6122 | Target: Unknown(87)
 Description      : Flame patch burning enemies.
 Tooltip          : Burning
@@ -4553,7 +4680,8 @@ Effects          :
                    Affected Spells: Ray of Frost (205021)
                    Family Flags: 56
 Description      : $@spelldesc205021
-Tooltip          : Ray of Frost's damage increased by $s1%.
+Tooltip          : Ray of Frost's damage increased by $s1%.
+
 Ray of Frost's snare increased by $s2%.
 
 Name             : Arcane Linguist (id=210086) [Spell Family (3), Passive] 
@@ -4644,9 +4772,10 @@ Attributes       : ........ ........ ..x..... ........   ........ ........ .....
                  : ........ ........ ........ ........   
                  : Do Not Sheath (18), Allow Class Ability Procs (416)
 Effects          :
-#1 (id=312151)   : Unknown(179)
+#1 (id=312151)   : Create Area Trigger (179)
                    Base Value: 15 | Scaled Value: 15 | PvP Coefficient: 1.00000 | Misc Value: 6845 | Target: At Enemy (53) -> Unknown(87)
-Description      : Creates a runic prison at the target's location, slowing enemy movement speed by ${$211056s1/-1}%, inflicting ${$211088s1*6} Arcane damage over $d, and then detonating for Arcane damage equal to $s1% of your maximum mana.
+Description      : Creates a runic prison at the target's location, slowing enemy movement speed by ${$211056s1/-1}%, inflicting ${$211088s1*6} Arcane damage over $d, and then detonating for Arcane damage equal to $s1% of your maximum mana.
+
 
 
 Name             : Time Anomaly (desc=PvP Talent) (id=210805) [Spell Family (3), Passive, Hidden] 
@@ -5343,8 +5472,10 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=349319)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Brain Freeze causes your next Flurry to  apply Winter's Chill to the target. 
-
+Description      : Brain Freeze causes your next Flurry to  apply Winter's Chill to the target. 
+
+
+
 Winter's Chill causes the target to take damage from your spells as if it were frozen.
 
 Name             : Freeze (desc=Pet) (id=231596) [Spell Family (3), Passive] 
@@ -5364,9 +5495,12 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=349333)   : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000
-Description      : Your Water Elemental can now cast Freeze:
-
-$@spellicon33395 $@spellname33395
+Description      : Your Water Elemental can now cast Freeze:
+
+
+
+$@spellicon33395 $@spellname33395
+
 $@spelldesc33395
 
 Name             : Critical Mass (desc=Rank 2) (id=231630) [Spell Family (3), Passive] 
@@ -5490,10 +5624,13 @@ Effects          :
 #3 (id=355719)   : Apply Aura (6) | Modify Damage Taken% (87)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 0x1 | Target: Self (1)
                    Affected School(s): Physical
-Description      : Shields you in flame, absorbing $<shield> damage$?s194315[ and reducing Physical damage taken by $s3%][] for $d.
-
+Description      : Shields you in flame, absorbing $<shield> damage$?s194315[ and reducing Physical damage taken by $s3%][] for $d.
+
+
+
 Melee attacks against you cause the attacker to take $235314s1 Fire damage.
-Tooltip          : Absorbs $w1 damage.
+Tooltip          : Absorbs $w1 damage.
+
 Melee attackers take $235314s1 Fire damage.
 Variables        : $shield=${$s2/100*$MHP*(1+$@versadmg)}
 
@@ -5575,11 +5712,15 @@ Effects          :
                    Base Value: -25 | Scaled Value: -25 | PvP Coefficient: 1.00000 | Misc Value: 1 | Target: Self (1)
 #5 (id=731326)   : Apply Aura (6) | Dummy (4)
                    Base Value: 20 | Scaled Value: 20 | PvP Coefficient: 1.00000 | Misc Value: 127 | Target: Self (1)
-Description      : Shields you with an arcane force, absorbing $<shield> damage and reducing magic damage taken by $s3% for $d.
-
+Description      : Shields you with an arcane force, absorbing $<shield> damage and reducing magic damage taken by $s3% for $d.
+
+
+
 The duration of harmful Magic effects against you is reduced by $s4%.
-Tooltip          : Absorbs $w1 damage.
-Magic damage taken reduced by $s3%.
+Tooltip          : Absorbs $w1 damage.
+
+Magic damage taken reduced by $s3%.
+
 Duration of all harmful Magic effects reduced by $w4%.
 Variables        : $shield=${$s5/100*$MHP*(1+$@versadmg)}
 
@@ -5631,8 +5772,10 @@ Effects          :
                    Base Value: 50 | Scaled Value: 50 | PvP Coefficient: 1.00000 | Misc Value: 15 | Target: Self (1)
                    Affected Spells: Dragon's Breath (31661)
                    Family Flags: 23
-Description      : Dragon's Breath always critically strikes for $s2% increased critical strike damage and contributes to Hot Streak. 
-
+Description      : Dragon's Breath always critically strikes for $s2% increased critical strike damage and contributes to Hot Streak. 
+
+
+
 Additionally, damage done by your next Pyroblast or Flamestrike is increased by $334277s1%.
 
 Name             : Frenetic Speed (id=236058) [Spell Family (3), Passive] 
@@ -5739,8 +5882,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
                    Affected Spells: Evocation (12051)
                    Family Flags: 26
-Description      : Clearcasting allows Arcane Missiles to be channeled while moving.
-
+Description      : Clearcasting allows Arcane Missiles to be channeled while moving.
+
+
+
 Evocation can be channeled while moving.
 
 Name             : Amplification (id=236628) [Spell Family (3), Passive] 
@@ -5784,7 +5929,7 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
                  : Passive (6), Only In Spellbook Until Learned (240), Cooldown Shared With AI Group (418)
 Effects          :
 #1 (id=357968)   : Apply Aura (6) | Dummy (4)
-                   Base Value: 50 | Scaled Value: 50 | PvP Coefficient: 1.00000 | Target: Self (1)
+                   Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000 | Target: Self (1)
 Description      : Each time Blizzard deals damage, the cooldown of Frozen Orb is reduced by ${$s1/100}.1 sec.
 
 Name             : Time and Space (id=238126) [Spell Family (3), Passive] 
@@ -5850,7 +5995,7 @@ Attributes       : ........ ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=365009)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-#2 (id=365030)   : Unknown(179)
+#2 (id=365030)   : Create Area Trigger (179)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 10228 | Target: Unknown(62)
 Description      : $@spelldesc238126
 Tooltip          : Aluneth will echo your next Arcane Explosion.
@@ -6185,8 +6330,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 2874.795 (coefficient=352.5287) | PvP Coefficient: 0.50000 | Radius: 0 - 5 yards | Target: Custom (18) -> AOE enemy (instant) (16)
 #2 (id=479677)   : Direct Heal (10) | Scaling Class: -8
                    Base Value: 0 | Scaled Value: 2874.795 (coefficient=352.5287) | PvP Coefficient: 1.00000 | Radius: 0 - 8 yards | Target: Custom (18) -> AOE friendly (31)
-Description      : Deals $s1 Holy Damage to enemies within $A1.
-
+Description      : Deals $s1 Holy Damage to enemies within $A1.
+
+
+
 Heals $s2 to allies within $A1. 
 
 Name             : Ebonbolt (id=257537) [Spell Family (3)] 
@@ -7044,8 +7191,10 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=718056)   : Apply Aura (6) | Dummy (4)
                    Base Value: 15 | Scaled Value: 15 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Consuming Hot Streak has a $s1% chance to make your next non-instant Pyroblast cast within $269651d deal $269651s1% additional damage.
-
+Description      : Consuming Hot Streak has a $s1% chance to make your next non-instant Pyroblast cast within $269651d deal $269651s1% additional damage.
+
+
+
 Maximum $269651u stacks.
 
 Name             : Pyroclasm (id=269651) [Spell Family (3)] 
@@ -7390,8 +7539,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 44.23665 (coefficient=0.465649) | PvP Coefficient: 0.50000 | Trigger Spell: 273830 | Target: Self (1)
 #2 (id=725767)   : Apply Aura (6) | Dummy (4) | Scaling Class: -1
                    Base Value: 0 | Scaled Value: 87.02295 (coefficient=0.916031) | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : Your spells and abilities have a chance to create a Surging Droplet nearby. Collecting it increases your primary stat by $s1 for $273842d.
-
+Description      : Your spells and abilities have a chance to create a Surging Droplet nearby. Collecting it increases your primary stat by $s1 for $273842d.
+
+
+
 Rarely, a Void Droplet will be created, increasing your primary stat by $s2 for $273843d instead.
 
 Name             : Filthy Transfusion (id=273834) [Passive] 
@@ -7881,8 +8032,10 @@ Effects          :
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000
 #4 (id=738960)   : Apply Aura (6) | Skill (30)
                    Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
-Description      : Your spells and abilities have a chance to fire a bomb at your target, which when in proximity breaks into $s3 smaller bombs. Upon hitting the ground, each smaller bomb deals $280984s1 damage to all nearby enemies.
-
+Description      : Your spells and abilities have a chance to fire a bomb at your target, which when in proximity breaks into $s3 smaller bombs. Upon hitting the ground, each smaller bomb deals $280984s1 damage to all nearby enemies.
+
+
+
 Increases your Kul Tiran or Zandalari Engineering by $s4.
 
 Name             : Ricocheting Inflatable Pyrosaw (id=280168) [Passive] 
@@ -7910,10 +8063,14 @@ Effects          :
                    Base Value: 4 | Scaled Value: 4 | PvP Coefficient: 1.00000
 #3 (id=738961)   : Apply Aura (6) | Skill (30)
                    Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
-Description      : Your spells and abilities have a chance to hurl a R.I.P that bounces among $s2 enemies, dealing $280656s1 Fire damage to each. 
-
-Beneficial spells have a chance to hurl a Mechanized External Needle Dispenser, healing up to $s2 allies for $280658s1.
-
+Description      : Your spells and abilities have a chance to hurl a R.I.P that bounces among $s2 enemies, dealing $280656s1 Fire damage to each. 
+
+
+
+Beneficial spells have a chance to hurl a Mechanized External Needle Dispenser, healing up to $s2 allies for $280658s1.
+
+
+
 Increases your Kul Tiran or Zandalari Engineering by $s3.
 
 Name             : Auto-Self-Cauterizer (id=280172) [Passive] 
@@ -7942,10 +8099,14 @@ Effects          :
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000
 #3 (id=738963)   : Apply Aura (6) | Skill (30)
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
-Description      : Taking damage has a chance to unleash your Auto-Self-Cauterizer, healing you for $280583s1, removing most* bleed effects, and snaring nearby enemies by $280583s2% for $280583d.
-
-Increases your Kul Tiran or Zandalari Engineering by $s3.
-
+Description      : Taking damage has a chance to unleash your Auto-Self-Cauterizer, healing you for $280583s1, removing most* bleed effects, and snaring nearby enemies by $280583s2% for $280583d.
+
+
+
+Increases your Kul Tiran or Zandalari Engineering by $s3.
+
+
+
 *Efficacy may vary.
 
 Name             : Synaptic Spark Capacitor (id=280174) [Spell Family (7), Passive] 
@@ -7973,8 +8134,10 @@ Effects          :
                    Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
 #3 (id=742699)   : Dummy (3) | Scaling Class: -8
                    Base Value: 0 | Scaled Value: 224.6529 (coefficient=9.294479) | PvP Coefficient: 0.50000
-Description      : Your spells and abilities have a chance to cause the target to become a Spark Coil for $280655d. Enemies within $s1 yards of the Spark Coil take $s3 damage every 2 seconds and deal $280847s1% reduced damage to you.
-
+Description      : Your spells and abilities have a chance to cause the target to become a Spark Coil for $280655d. Enemies within $s1 yards of the Spark Coil take $s3 damage every 2 seconds and deal $280847s1% reduced damage to you.
+
+
+
 Increases your Kul Tiran or Zandalari Engineering by $s2.
 
 Name             : Relational Normalization Gizmo (id=280178) [Passive] 
@@ -8001,8 +8164,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 95 (coefficient=1) | PvP Coefficient: 0.50000 | Target: Self (1)
 #2 (id=738959)   : Apply Aura (6) | Skill (30)
                    Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
-Description      : Your spells and abilities have a chance to grow or shrink the world. Shrinking the world grants you $280654s4 primary stat and $280654s6 maximum health for $280654d. Growing the world grants you $280653s1 Haste and $280653s3% movement speed for $280653d.
-
+Description      : Your spells and abilities have a chance to grow or shrink the world. Shrinking the world grants you $280654s4 primary stat and $280654s6 maximum health for $280654d. Growing the world grants you $280653s1 Haste and $280653s3% movement speed for $280653d.
+
+
+
 Increases your Kul Tiran or Zandalari Engineering by $s2.
 
 Name             : Personal Absorb-o-Tron (id=280181) [Passive] 
@@ -8029,8 +8194,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 3988.146 (coefficient=165) | PvP Coefficient: 0.20000 | Target: Self (1)
 #2 (id=738962)   : Apply Aura (6) | Skill (30)
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000 | Misc Value: 2499 | Target: Self (1)
-Description      : Taking damage has a chance to call your Personal Absorb-o-Tron, absorbing $280661s1% of damage taken over $280660d, up to $280660s1.
-
+Description      : Taking damage has a chance to call your Personal Absorb-o-Tron, absorbing $280661s1% of damage taken over $280660d, up to $280660s1.
+
+
+
 Increases your Kul Tiran or Zandalari Engineering by $s2.
 
 Name             : Dagger in the Back (id=280284) [Passive] 
@@ -8180,8 +8347,10 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=738151)   : Apply Aura (6) | Unknown(285) | Scaling Class: -1
                    Base Value: 0 | Scaled Value: 2.0805 (coefficient=0.0219) | PvP Coefficient: 0.50000 | Trigger Spell: 280708 | Target: Self (1)
-Description      : Your armor gathers and analyzes combat data every $280708t1 sec, increasing your primary stat by $s1, stacking up to $280709u times. The data decays while out of combat.
-
+Description      : Your armor gathers and analyzes combat data every $280708t1 sec, increasing your primary stat by $s1, stacking up to $280709u times. The data decays while out of combat.
+
+
+
 Enables $@spellname280573 within Uldir.
 
 Name             : Laser Matrix (id=280559) [Passive] 
@@ -8203,8 +8372,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 978.9084 (coefficient=40.5) | PvP Coefficient: 0.50000 | Trigger Spell: 280702 | Target: Self (1)
 #2 (id=738401)   : Apply Aura (6) | Dummy (4) | Scaling Class: -8
                    Base Value: 0 | Scaled Value: 1751.7 (coefficient=72.47239) | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : Your spells and abilities have a chance to release a barrage of lasers, dealing $s1 Arcane damage split among all enemies and restoring $s2 health split among injured allies.
-
+Description      : Your spells and abilities have a chance to release a barrage of lasers, dealing $s1 Arcane damage split among all enemies and restoring $s2 health split among injured allies.
+
+
+
 Enables $@spellname280573 within Uldir.
 
 Name             : Glory in Battle (id=280577) [Passive] 
@@ -8226,7 +8397,8 @@ Effects          :
                    Base Value: 0 | Scaled Value: 86.80236 (coefficient=0.913709) | PvP Coefficient: 0.50000 | Trigger Spell: 280778 | Target: Self (1)
 #2 (id=738555)   : Apply Aura (6) | Dummy (4) | Scaling Class: -7
                    Base Value: 0 | Scaled Value: 52.9283 (coefficient=0.55714) | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : Your spells and abilities have a chance to grant $s1 Critical Strike and $s2 Haste for $280780d. 
+Description      : Your spells and abilities have a chance to grant $s1 Critical Strike and $s2 Haste for $280780d. 
+
 Attacking a member of the opposite faction significantly increases this chance.
 
 Name             : Retaliatory Fury (id=280579) [Passive] 
@@ -8249,7 +8421,8 @@ Effects          :
                    Base Value: 0 | Scaled Value: 97.91736 (coefficient=1.030709) | PvP Coefficient: 0.50000 | Target: Self (1)
 #2 (id=738573)   : Apply Aura (6) | Unknown(285) | Scaling Class: -1
                    Base Value: 0 | Scaled Value: 342.7252 (coefficient=3.607634) | PvP Coefficient: 0.50000 | Trigger Spell: 280785 | Target: Self (1)
-Description      : Your spells and abilities have a chance to grant $s1 Mastery and absorb $s2 damage for $280788d. 
+Description      : Your spells and abilities have a chance to grant $s1 Mastery and absorb $s2 damage for $280788d. 
+
 Attacking a member of the opposite faction is more likely to activate this effect.
 
 Name             : Combined Might (id=280580) [Passive] 
@@ -8363,7 +8536,8 @@ Effects          :
                    Base Value: 0 | Scaled Value: 86.80236 (coefficient=0.913709) | PvP Coefficient: 0.50000 | Trigger Spell: 280851 | Target: Self (1)
 #2 (id=738699)   : Apply Aura (6) | Dummy (4) | Scaling Class: -7
                    Base Value: 0 | Scaled Value: 52.9283 (coefficient=0.55714) | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : Your spells and abilities have a chance to grant $s1 Critical Strike and $s2 Haste for $280852d. 
+Description      : Your spells and abilities have a chance to grant $s1 Critical Strike and $s2 Haste for $280852d. 
+
 Attacking a member of the opposite faction significantly increases this chance.
 
 Name             : Last Gift (id=280624) [Passive] 
@@ -8386,7 +8560,8 @@ Effects          :
                    Base Value: 0 | Scaled Value: 97.91736 (coefficient=1.030709) | PvP Coefficient: 0.50000 | Target: Self (1)
 #2 (id=738721)   : Apply Aura (6) | Unknown(285) | Scaling Class: -1
                    Base Value: 0 | Scaled Value: 342.7252 (coefficient=3.607634) | PvP Coefficient: 0.50000 | Trigger Spell: 280860 | Target: Self (1)
-Description      : Your spells and abilities have a chance to grant $s1 Mastery and absorb $s2 damage for $280862d. 
+Description      : Your spells and abilities have a chance to grant $s1 Mastery and absorb $s2 damage for $280862d. 
+
 Attacking a member of the opposite faction is more likely to activate this effect.
 
 Name             : Stronger Together (id=280625) [Passive] 
@@ -8580,8 +8755,10 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=748188)   : Apply Aura (6) | Unknown(285) | Scaling Class: -8
                    Base Value: 0 | Scaled Value: 66.72859 (coefficient=2.760736) | PvP Coefficient: 0.50000 | Trigger Spell: 264351 | Target: Self (1)
-Description      : While you are above $264351s1% mana, Arcane Blast deals $s1 additional damage.
-
+Description      : While you are above $264351s1% mana, Arcane Blast deals $s1 additional damage.
+
+
+
 While you are below $264351s1% mana, Arcane Blast's cost is reduced by $264353s1.
 
 Name             : Shadow of Elune (id=287467) [Passive] 
@@ -8646,7 +8823,8 @@ Effects          :
 #3 (id=750716)   : Dummy (3)
                    Base Value: 100 | Scaled Value: 100 | PvP Coefficient: 1.00000
 Description      : Your damaging abilities have a chance to deal $<dmg> Plague damage over $287638d, and your healing abilities have a chance to restore $<heal> health over $287639d. These effects are increased by up to $s3% based on the target's missing health.
-Variables        : $dmg=${$s1*3}
+Variables        : $dmg=${$s1*3}
+
 $heal=${$s2*3}
 
 Name             : Endless Hunger (id=287662) [Passive] 
@@ -8982,9 +9160,12 @@ Effects          :
                    Base Value: 0 | Scaled Value: 9.527075 (coefficient=0.100285) | PvP Coefficient: 0.50000 | Target: Self (1)
 #3 (id=778210)   : Apply Aura (6) | Dummy (4) | Scaling Class: -7
                    Base Value: 0 | Scaled Value: 76.2167 (coefficient=0.802281) | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : Your Mastery is increased by $s1, plus an additional $s2 for each ally also affected by Loyal to the End, up to $s3.
-
-When you die, your allies gain Critical Strike, Haste, and Versatility equal to their Mastery bonus from this trait.
+Description      : Your Mastery is increased by $s1, plus an additional $s2 for each ally also affected by Loyal to the End, up to $s3.
+
+
+
+When you die, your allies gain Critical Strike, Haste, and Versatility equal to their Mastery bonus from this trait.
+
 
 
 Name             : Undulating Tides (id=303008) [Passive] 
@@ -9011,8 +9192,10 @@ Effects          :
                    Base Value: 50 | Scaled Value: 4559.121 (coefficient=188.6228) | PvP Coefficient: 0.25000 | Target: Self (1)
 #4 (id=778216)   : Apply Aura (6) | Dummy (4)
                    Base Value: 45 | Scaled Value: 45 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Your damaging spells and abilities have a chance to crash a wave upon your target for $s1 Frost damage.
-
+Description      : Your damaging spells and abilities have a chance to crash a wave upon your target for $s1 Frost damage.
+
+
+
 When your health drops below $s2%, gain a shield absorbing $s3 damage within $303390d. When this occurs, Undulating Tides cannot trigger again for $s4 sec.
 
 Name             : Radiant Spark (desc=Kyrian) (id=307443) [Spell Family (3)] 
@@ -9027,7 +9210,7 @@ Cast Time        : 1.5 seconds
 GCD              : 1.5 seconds
 Duration         : 10 seconds
 Cooldown         : 30 seconds
-Labels           : 976: Decrypted Urh Cypher (368239 effect#4)
+Labels           : 976
 Proc Chance      : 100%
 Proc Flags       : ........ x...x... x.x..... ........ 
                  : Yellow Ranged, Generic Hostile Spell, Magic Hostile Spell, Periodic
@@ -9051,9 +9234,12 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 307454 | Target: Self (1)
 #4 (id=797439)   : Interrupt Cast (68)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : Conjure a radiant spark that causes $s1 Arcane damage instantly, and an additional $o2 damage over $d.
-
-The target takes $307454s1% increased damage from your direct damage spells, stacking each time they are struck. This effect ends after $307454u spells.
+Description      : Conjure a radiant spark that causes $s1 Arcane damage instantly, and an additional $o2 damage over $d.
+
+
+
+The target takes $307454s1% increased damage from your direct damage spells, stacking each time they are struck. This effect ends after $307454u spells.
+
 
 Tooltip          : Suffering $w2 Arcane damage every $t2 sec.
 
@@ -9095,7 +9281,7 @@ Spell Level      : 48
 GCD              : 1.5 seconds
 Duration         : 4 seconds
 Cooldown         : 60 seconds
-Labels           : 976: Decrypted Urh Cypher (368239 effect#4)
+Labels           : 976
                  : 1048: Discipline of the Grove (336992 effect#1)
 Affecting spells : Norgannon's Foresight (236380 effect#1)
 Family Flags     : 60
@@ -9117,8 +9303,10 @@ Effects          :
                    Base Value: 40 | Scaled Value: 40 | PvP Coefficient: 1.00000 | Target: Self (1)
 #4 (id=843436)   : Apply Aura (6) | Periodic Trigger Spell (23): Fae Tendrils every 1 seconds
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 342373 | Target: Self (1)
-Description      : Draw power from the ground beneath, dealing ${$325130s1*$d/$t} Nature damage over $d to enemies within $325130A1 yds. 
-
+Description      : Draw power from the ground beneath, dealing ${$325130s1*$d/$t} Nature damage over $d to enemies within $325130A1 yds. 
+
+
+
 While channeling, your Mage ability cooldowns are reduced by ${-$s2/1000*$d/$t} sec over $d.
 Tooltip          : Every $t1 sec, deal $325130s1 Nature damage to enemies within $325130A1 yds and reduce the remaining cooldown of your abilities by ${-$s2/1000} sec.
 
@@ -9134,7 +9322,7 @@ Cast Time        : 1.5 seconds
 GCD              : 1.5 seconds
 Duration         : 25 seconds
 Cooldown         : 90 seconds
-Labels           : 976: Decrypted Urh Cypher (368239 effect#4)
+Labels           : 976
 Internal Cooldown: 6 seconds
 Stacks           : 3 initial, 3 maximum
 Proc Chance      : 100%
@@ -9156,13 +9344,19 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Enemy (6)
 #2 (id=871274)   : Dummy (3)
                    Base Value: 6 | Scaled Value: 6 | PvP Coefficient: 1.00000
-Description      : Conjure $n mirrors to torment the enemy for $d. Whenever the target attacks, casts a spell, or uses an ability, a mirror is consumed to inflict $320035s1 Shadow damage and their movement and cast speed are slowed by $320035s3%. This effect cannot be triggered more often than once per $345977d.
-
-The final mirror will instead inflict $317589s1 Shadow damage to the enemy, Rooting and Silencing them for $317589d.
-
+Description      : Conjure $n mirrors to torment the enemy for $d. Whenever the target attacks, casts a spell, or uses an ability, a mirror is consumed to inflict $320035s1 Shadow damage and their movement and cast speed are slowed by $320035s3%. This effect cannot be triggered more often than once per $345977d.
+
+
+
+The final mirror will instead inflict $317589s1 Shadow damage to the enemy, Rooting and Silencing them for $317589d.
+
+
+
 Whenever a mirror is consumed $?c1[you gain Clearcasting][]$?c2[your Fire Blast cooldown is reduced by $s2 sec][]$?c3[you gain Brain Freeze][].
-Tooltip          : Attacking, casting a spell or ability, consumes a mirror to inflict Shadow damage and reduce cast and movement speed by $320035s3%. 
-
+Tooltip          : Attacking, casting a spell or ability, consumes a mirror to inflict Shadow damage and reduce cast and movement speed by $320035s3%. 
+
+
+
 Your final mirror will instead Root and Silence you for $317589d.
 
 Name             : Heart of Darkness (id=317137) [Passive] 
@@ -9237,8 +9431,10 @@ Attributes       : ........ ........ x....... ........   ........ ........ .....
 Effects          :
 #1 (id=806561)   : School Damage (2): fire
                    Base Value: 0 | Scaled Value: 0 (coefficient=0, delta coefficient=0.05) | SP Coefficient: 0.72000 | PvP Coefficient: 1.00000 | Target: Enemy (6)
-Description      : Blasts the enemy for $s1 Fire damage.$?a231568[
-
+Description      : Blasts the enemy for $s1 Fire damage.$?a231568[
+
+
+
 |cFFFFFFFFFire:|r Always deals a critical strike.][]
 
 Name             : Agonizing Backlash (id=320035) [Spell Family (3)] 
@@ -9388,13 +9584,13 @@ Stacks           : 1 maximum
 Proc Chance      : 101%
 Attributes       : ........ ........ ........ ........   ........ ........ ........ ........ 
                  : ........ ........ ........ ........   ........ ........ ........ ........ 
-                 : ........ ........ ........ ........   .....x.. ........ ........ ........ 
+                 : ........ ........ ........ ........   ........ ........ ........ ........ 
                  : ........ ........ ........ ........   ........ ........ ........ ........ 
                  : ........ ....x... ........ ........   ........ ........ ........ ........ 
                  : ........ ........ ........ ........   ........ ........ ........ ........ 
                  : ........ ........ ........ ........   x....... ........ ........ ........ 
                  : ........ ........ ........ ........   
-                 : Limit N (165), Aura Points On Client (268), Allow Class Ability Procs (416)
+                 : Aura Points On Client (268), Allow Class Ability Procs (416)
 Effects          :
 #1 (id=809011)   : Apply Aura (6) | Modify Spell Crit% (57)
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000 | Target: Friend (21)
@@ -9515,8 +9711,10 @@ Effects          :
                    Base Value: 25 | Scaled Value: 25 | PvP Coefficient: 1.00000 | Trigger Spell: 210824 | Target: Enemy (6)
 #2 (id=843108)   : Energize Power (30)
                    Base Value: 4 | Scaled Value: 4 | PvP Coefficient: 1.00000 | Misc Value: none | Target: Self (1)
-Description      : Applies Touch of the Magi to your current target, accumulating $s1% of the damage you deal to the target for $210824d, and then exploding for that amount of Arcane damage to the target and reduced damage to all nearby enemies.$?a343215[
-
+Description      : Applies Touch of the Magi to your current target, accumulating $s1% of the damage you deal to the target for $210824d, and then exploding for that amount of Arcane damage to the target and reduced damage to all nearby enemies.$?a343215[
+
+
+
 |cFFFFFFFFGenerates $s2 Arcane Charges.|r][]
 
 Name             : Arcane Barrage (desc=Rank 3) (id=321526) [Spell Family (3), Passive] 
@@ -9892,7 +10090,7 @@ Cast Time        : 1.5 seconds
 GCD              : 1.5 seconds
 Duration         : 25 seconds
 Cooldown         : 180 seconds
-Labels           : 976: Decrypted Urh Cypher (368239 effect#4)
+Labels           : 976
                  : 1049: Gift of the Lich (336999 effect#1)
 Proc Chance      : 101%
 Proc Flags       : ........ ....x... x....... ........ 
@@ -9929,8 +10127,10 @@ Effects          :
                    Base Value: 15 | Scaled Value: 15 | PvP Coefficient: 1.00000 | Misc Value: 22 | Target: Self (1)
                    Affected Spells: Cone of Cold (120), Frost Nova (122), Fireball (133), Arcane Explosion (1449), Flamestrike (2120), Scorch (2948), Arcane Missiles (7268), Pyroblast (11366), Arcane Blast (30451), Dragon's Breath (31661), Arcane Barrage (44425), Living Bomb (44461), Frozen Orb (84721), Fire Blast (108853), Nether Tempest (114923), Nether Tempest (114954), Icicle (148022), Comet Storm (153596), Arcane Orb (153640), Meteor Burn (155158), Supernova (157980), Blast Wave (157981), Ice Nova (157997), Blizzard (190357), Cinderstorm (198928), Ray of Frost (205021), Conflagration Flare Up (205345), Flame Patch (205472), Living Bomb (217694), Arcane Assault (225119), Conflagration (226757), Flurry (228354), Frostbolt (228597), Ice Lance (228598), Glacial Spike (228600), Frost Nova (235235), Blazing Barrier (235314), Time and Space (240689), Living Bomb (244813), Ebonbolt (257538), Phoenix Flames (257541), Phoenix Flames (257542), Trailing Embers (277703), Glacial Assault (279856), Radiant Spark (307443), Tormenting Backlash (317589), Fire Blast (319836), Agonizing Backlash (320035), Pyroblast (321712), Shifting Power (325130), Glacial Fragments (327498), Arcane Echo (342232), Meteor (351140)
                    Family Flags: 3
-Description      : Transform into a powerful skeletal mage for $d. 
-
+Description      : Transform into a powerful skeletal mage for $d. 
+
+
+
 While in the form of a skeletal mage, your Frostbolt, Fireball, and Arcane Blast hit up to $s4 enemies near your target and your spell damage is increased by $s2%.
 Tooltip          : Transformed into a powerful skeletal mage, greatly enhancing your Frostbolt, Fireball, and Arcane Blast and increasing your spell damage by $w2%.
 
@@ -10678,6 +10878,7 @@ Effects          :
 Description      : Blizzard's damage is increased by |cFFFFFFFF${$s1}.1%|r, and its movement speed reduction is increased by $s2%.
 
 Name             : Icy Propulsion (id=336522) [Spell Family (3), Passive, Hidden] 
+Hotfixed         : Internal Cooldown (350 -> 0)
 School           : Physical
 Spell Type       : None
 Spell Level      : 60
@@ -11345,8 +11546,10 @@ Effects          :
 #1 (id=843174)   : Apply Aura (6) | Apply Flat Modifier w/ Label (219): Spell Cooldown (11)
                    Base Value: -30000 | Scaled Value: -30000 | PvP Coefficient: 1.00000 | Misc Value: 11 | Misc Value 2: 892 (Label) | Target: Self (1)
                    Affected Spells (Label): Alter Time (108978), Alter Time (342245)
-Description      : Reduces the cooldown of Alter Time by ${$s1/-1000} sec. 
-
+Description      : Reduces the cooldown of Alter Time by ${$s1/-1000} sec. 
+
+
+
 Alter Time resets the cooldown of Blink when you return to your original location.
 
 Name             : From the Ashes (id=342344) [Spell Family (3), Passive] 
@@ -11420,42 +11623,42 @@ Description      : $@spelldesc342372
 Tooltip          : Rooted in place.
 
 Name             : Teleport (id=343127) [Spell Family (3)] 
+Hotfixed         : Attributes
 Class            : Mage
 School           : Arcane
 Spell Type       : None
 Resource         : 3% Base Mana (0) (id=215325)
 Spell Level      : 21
-Cast Time        : 10 seconds
 Attributes       : ........ ........ ........ ........   ........ ........ ........ ........ 
                  : ........ ........ ........ ........   ........ ........ ........ ........ 
-                 : ........ ........ ........ ........   ........ ........ ........ ........ 
+                 : ........ ........ ........ ........   ........ ......x. ........ ........ 
                  : ........ ........ ........ ........   ........ ........ x....... ........ 
                  : ........ ........ ........ ........   ........ ........ ........ ........ 
                  : ........ ........ ........ ........   ...x.... ........ ........ ........ 
                  : ........ ........ ........ ........   ........ ........ ........ ........ 
                  : ........ ........ ........ ........   
-                 : Only In Spellbook Until Learned (240), Do Not Log on Learn (355)
+                 : Not Available While Charmed (174), Only In Spellbook Until Learned (240), Do Not Log on Learn (355)
 Effects          :
 #1 (id=844711)   : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
 Description      : Teleports you to a major city.
 
 Name             : Portal (id=343140) [Spell Family (3)] 
+Hotfixed         : Attributes
 Class            : Mage
 School           : Arcane
 Spell Type       : None
 Resource         : 4% Base Mana (0) (id=215326)
 Spell Level      : 24
-Cast Time        : 10 seconds
 Attributes       : ........ ........ ........ ........   ........ ........ ........ ........ 
                  : ........ ........ ........ ........   ........ ........ ........ ........ 
-                 : ........ ........ ........ ........   ........ ........ ........ ........ 
+                 : ........ ........ ........ ........   ........ ......x. ........ ........ 
                  : ........ ........ ........ ........   ........ ........ x....... ........ 
                  : ........ ........ ........ ........   ........ ........ ........ ........ 
                  : ........ ........ ........ ........   ...x.... ........ ........ ........ 
                  : ........ ........ ........ ........   ........ ........ ........ ........ 
                  : ........ ........ ........ ........   
-                 : Only In Spellbook Until Learned (240), Do Not Log on Learn (355)
+                 : Not Available While Charmed (174), Only In Spellbook Until Learned (240), Do Not Log on Learn (355)
 Effects          :
 #1 (id=844728)   : Dummy (3)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)

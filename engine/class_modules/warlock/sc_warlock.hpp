@@ -12,6 +12,7 @@ struct warlock_t;
 enum version_check_e
 {
   VERSION_PTR,
+  VERSION_9_2_0,
   VERSION_9_1_0,
   VERSION_9_0_5,
   VERSION_9_0_0,
@@ -412,6 +413,8 @@ public:
     propagate_const<buff_t*> dark_soul_instability;
     propagate_const<buff_t*> impending_ruin;
     propagate_const<buff_t*> ritual_of_ruin;
+    // Possible TODO: There is a new buff for Blasphemy when the pet is out, may be useful for simplifying mechanics/APL
+    // Requires manually adding spell ID to generator
 
     // Covenants
     propagate_const<buff_t*> decimating_bolt;
@@ -502,7 +505,7 @@ public:
   int initial_soul_shards;
   std::string default_pet;
   shuffled_rng_t* rain_of_chaos_rng;
-  const spell_data_t* version_9_1_0_data;
+  const spell_data_t* version_9_2_0_data;
 
   warlock_t( sim_t* sim, util::string_view name, race_e r );
 

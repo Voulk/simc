@@ -1,4 +1,4 @@
-SimulationCraft 915-01 for World of Warcraft 9.1.5.42010 Live (hotfix 2022-01-28/42010, git build shadowlands 9fcec2a45d)
+SimulationCraft 915-01 for World of Warcraft 9.1.5.42010 Live (hotfix 2022-01-28/42010)
 Name             : Field of Blossoms (id=319191) [Passive, Hidden] 
 Covenant         : Night Fae
 School           : Physical
@@ -152,8 +152,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 320221 | Target: Self (1)
 #2 (id=875308)   : Apply Aura (6) | Proc Trigger Spell (42)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : When you take damage that would kill you, instead rejuvenate within a wildseed, regaining ${$320224d*$320224m3}% of HP over $320224d. If the wildseed takes more than $<points> damage during this time, you die.
-
+Description      : When you take damage that would kill you, instead rejuvenate within a wildseed, regaining ${$320224d*$320224m3}% of HP over $320224d. If the wildseed takes more than $<points> damage during this time, you die.
+
+
+
 This effect may only occur once every $320227d.
 Variables        : $points=${$cond($gt($SP,$AP),$SP*10,$AP*10)*(1)}
 
@@ -241,8 +243,10 @@ Attributes       : ......x. ........ ........ ........   ........ ........ .....
 Effects          :
 #1 (id=806797)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : $?a137005[Swarming Mist]?a212611[Sinful Brand]?a137009[Ravenous Frenzy]?a137014[Flayed Shot]?a137018[Mirrors of Torment]?a137022[Fallen Order]?a137026[Ashen Hallow]?a137030[Mindgames]?a137034[Flagellation]?a137038[Chain Harvest]?a137042[Impending Catastrophe]?a137047[Condemn][Activating your Venthyr class ability] signals the start of tea time, granting $333218s1% Versatility to you and $333251s1% Versatility to up to $333251i nearby allies. Lasts ${$333218d*$<mod>} sec.$?a137047|a137034[
-
+Description      : $?a137005[Swarming Mist]?a212611[Sinful Brand]?a137009[Ravenous Frenzy]?a137014[Flayed Shot]?a137018[Mirrors of Torment]?a137022[Fallen Order]?a137026[Ashen Hallow]?a137030[Mindgames]?a137034[Flagellation]?a137038[Chain Harvest]?a137042[Impending Catastrophe]?a137047[Condemn][Activating your Venthyr class ability] signals the start of tea time, granting $333218s1% Versatility to you and $333251s1% Versatility to up to $333251i nearby allies. Lasts ${$333218d*$<mod>} sec.$?a137047|a137034[
+
+
+
 You may only serve tea every $333221d.][]
 Variables        : $mod=$?a137005[${1.0}]?a212611[${1.0}]?a137009[${3.0}]?a137014[${0.5}.1]?a137018[${1.5}.1]?a137022[${3.0}]?a137026[${4.0}]?a137030[${0.8}.2]?a137034[${1.5}]?a137038[${1.4}.1]?a137042[${1.0}]?a137047[${1.0}][${1.0}]
 
@@ -316,7 +320,8 @@ Effects          :
 #1 (id=807855)   : Apply Aura Pet (174) | Proc Trigger Spell (42): Paralytic Poison
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 321519 | Radius: 100 yards | Target: Self (1)
 Description      : Your interrupts apply Niya's Paralytic Poison to your target, dealing ${$<pointsA>*$321519d} Nature damage over $321519d. Targets with Niya's Paralytic Poison take an additional $<pointsB> Nature damage if interrupted once more.
-Variables        : $pointsA=${$cond($gt($SP,$AP),$SP*0.05,$AP*0.05)*(1+$@versadmg)}
+Variables        : $pointsA=${$cond($gt($SP,$AP),$SP*0.05,$AP*0.05)*(1+$@versadmg)}
+
 $pointsB=${$cond($gt($SP,$AP),$SP*0.24,$AP*0.24)*(1+$@versadmg)}
 
 Name             : Niya's Tools: Herbs (id=320662) [Passive, Hidden] 
@@ -411,8 +416,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 342937 | Target: Self (1)
 #3 (id=875153)   : Dummy (3)
                    Base Value: 8 | Scaled Value: 8 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Healing or dealing damage has a chance to grant you a stack of Redirected Anima. Redirected Anima increases your maximum health by $342814s1% and your Mastery by $342814s2 for $342814d, and stacks overlap.
-
+Description      : Healing or dealing damage has a chance to grant you a stack of Redirected Anima. Redirected Anima increases your maximum health by $342814s1% and your Mastery by $342814s2 for $342814d, and stacks overlap.
+
+
+
 $?(s152280&a137005)[Defile]?(a137005&!s152280)[Death's Due]?a212611[The Hunt]?a137009[Convoke the Spirits]?a137014[Wild Spirits]?a137018[Shifting Power]?a137022[Faeline Stomp]?a137026[Blessing of Seasons]?a137030[Fae Guardians]?a137034[Sepsis]?a137038[Fae Transfusion]?a137042[Soul Rot]?a137047[Ancient Aftershock][Activating your Night Fae class ability] grants you ${$s3*$<mod>} stacks of Redirected Anima.
 Tooltip          : $spelldesc322721
 Variables        : $mod=$?a137005[${0.25}]?a212611[${1.5}]?a137009[${2}]?a137014[${2}]?a137018[${0.75}]?a137022[${0.5}]?a137026[${0.75}]?a137030[${1.5}]?a137034[${1.5}]?a137038[${2}]?a137042[${1}]?a137047[${1.5}][${1}]
@@ -437,8 +444,10 @@ Effects          :
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
 #2 (id=833121)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Fleshcraft's passive effect consumes a corpse's essence completely, granting a benefit based on the creature's type. 
-
+Description      : Fleshcraft's passive effect consumes a corpse's essence completely, granting a benefit based on the creature's type. 
+
+
+
 Casting Fleshcraft also consumes a small portion of your own essence, granting you the Humanoid benefit.
 
 Name             : Kevin's Keyring (id=323079) [Passive, Hidden] 
@@ -466,8 +475,10 @@ Effects          :
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Target: Self (1)
 #5 (id=845725)   : Dummy (3)
                    Base Value: 12 | Scaled Value: 12 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Allows opening of locks that require up to $s2 skill, once every $s5 hours.
-
+Description      : Allows opening of locks that require up to $s2 skill, once every $s5 hours.
+
+
+
 Each $s4 sec spent channeling Fleshcraft reduces Kevin's Keyring's cooldown by $s3 min.
 
 Name             : Plagueborn Cleansing Slime (id=323081) [Passive, Hidden] 
@@ -570,8 +581,10 @@ Attributes       : ......xx x....... .......x x..x.x..   .....x.. ..x..... .....
 Effects          :
 #1 (id=811790)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : While channeling Fleshcraft, you are immune to crowd control and you regenerate $323524s17% health every $323524t17 sec. 
-
+Description      : While channeling Fleshcraft, you are immune to crowd control and you regenerate $323524s17% health every $323524t17 sec. 
+
+
+
 If you finish the full channel, you gain $324631d of crowd control immunity, during which you regenerate $323524s17% health every $323524t17 sec.
 
 Name             : Sulfuric Emission (id=323916) [Passive, Hidden] 
@@ -758,8 +771,10 @@ Effects          :
                    Base Value: 35 | Scaled Value: 35 | PvP Coefficient: 1.00000 | Misc Value: 13 | Target: Self (1)
 #5 (id=868286)   : Apply Aura (6) | Dummy (4)
                    Base Value: 75 | Scaled Value: 75 | PvP Coefficient: 1.00000 | Misc Value: 13 | Target: Self (1)
-Description      : Your damage to targets above $s5% health and healing to targets below $s4% health is increased by $s1%.
-
+Description      : Your damage to targets above $s5% health and healing to targets below $s4% health is increased by $s1%.
+
+
+
 When your spells and abilities are enhanced this way, you gain $343594s1% increased movement speed for $343594d.
 
 Name             : Horn of the Wild Hunt (id=325067) [Passive, Hidden] 
@@ -1055,10 +1070,13 @@ Effects          :
 #6 (id=876253)   : Apply Aura (6) | Apply Flat Modifier w/ Label (219): Spell Effect 4 (32)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Misc Value: 32 | Misc Value 2: 1185 (Label) | Target: Self (1)
                    Affected Spells (Label): Forgeborne Reveries (326514), Soul Exhaustion (358164)
-Description      : Your $pri and Armor are increased by $<buff>% for each enchantment on your armor, up to $<max>%.
-
+Description      : Your $pri and Armor are increased by $<buff>% for each enchantment on your armor, up to $<max>%.
+
+
+
 Upon death your armor anchors your soul, allowing you to fight for an additional $327140d. During this time, your damage and healing done is reduced by $327140s7% and you cannot receive healing. This effect can only occur once every $358164d.
-Variables        : $buff=${$348272s1}
+Variables        : $buff=${$348272s1}
+
 $max=${3*$<buff>}
 
 Name             : Heirmir's Arsenal: Marrowed Gemstone (id=326572) [Passive, Hidden] 
@@ -1214,10 +1232,13 @@ Attributes       : ......xx x....... .......x x..x.x..   .....x.. ..x..... .....
 Effects          :
 #1 (id=820394)   : Apply Aura (6) | Proc Trigger Spell (42)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : $?a137005[Shackle the Unworthy]?a212611[Elysian Decree]?a137009[Kindred Spirits]?a137014[Resonating Arrow]?a137018[Radiant Spark]?a137022[Weapons of Order]?a137026[Divine Toll]?a137030[Boon of the Ascended]?a137034[Echoing Reprimand]?a137038[Vesper Totem]?a137042[Scouring Tithe]?a137047[Spear of Bastion][Activating your Kyrian class ability] increases your Mastery by $328908m1 for ${$328908d*$<mod>}.1 sec and occasionally expels Sorrowful Memories. 
-
+Description      : $?a137005[Shackle the Unworthy]?a212611[Elysian Decree]?a137009[Kindred Spirits]?a137014[Resonating Arrow]?a137018[Radiant Spark]?a137022[Weapons of Order]?a137026[Divine Toll]?a137030[Boon of the Ascended]?a137034[Echoing Reprimand]?a137038[Vesper Totem]?a137042[Scouring Tithe]?a137047[Spear of Bastion][Activating your Kyrian class ability] increases your Mastery by $328908m1 for ${$328908d*$<mod>}.1 sec and occasionally expels Sorrowful Memories. 
+
+
+
 Walking through Sorrowful Memories extends this effect by ${$328913m2*$<modb>}.1 sec. $?a137018|?a137042[Combat Meditation may only occur once every $345861d.][]
-Variables        : $mod=$?a137005[${1}]?a212611[${1}]?a137009[${1}]?a137014[${1}]?a137018[${1}]?a137022[${2}]?a137026[${1}]?a137030[${3}]?a137034[${0.75}]?a137038[${1}]?a137042[${1}]?a137047[${1}][${1}]
+Variables        : $mod=$?a137005[${1}]?a212611[${1}]?a137009[${1}]?a137014[${1}]?a137018[${1}]?a137022[${2}]?a137026[${1}]?a137030[${3}]?a137034[${0.75}]?a137038[${1}]?a137042[${1}]?a137047[${1}][${1}]
+
 $modb=$?a137005[${1}]?a212611[${1}]?a137009[${1}]?a137014[${1}]?a137018[${1}]?a137022[${2}]?a137026[${1}]?a137030[${3}]?a137034[${0.75}]?a137038[${1}]?a137042[${1}]?a137047[${1}][${1}]
 
 Name             : Ascendant Phial (id=329776) [Passive, Hidden] 
@@ -1389,8 +1410,10 @@ Effects          :
                    Base Value: 50 | Scaled Value: 50 | PvP Coefficient: 1.00000 | Target: Self (1)
 #3 (id=875122)   : Apply Aura (6) | Dummy (4)
                    Base Value: 1 | Scaled Value: 1 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Your critical strikes grant you stacks of Valiant Strikes, up to $330943u. If a nearby party member drops below $s2% health, you consume these stacks to heal them for $s3% of their maximum health per stack.
-
+Description      : Your critical strikes grant you stacks of Valiant Strikes, up to $330943u. If a nearby party member drops below $s2% health, you consume these stacks to heal them for $s3% of their maximum health per stack.
+
+
+
 After healing this way, you may not benefit from Valiant Strikes for $348236d.
 
 Name             : Agent of Chaos (id=331576) [Passive, Hidden] 
@@ -2014,7 +2037,8 @@ Effects          :
 #3 (id=840537)   : Apply Aura (6) | Dummy (4)
                    Base Value: 100 | Scaled Value: 100 | PvP Coefficient: 0.50000 | Target: Self (1)
 Description      : Damage taken below $<health>% health is reduced by $<reduction>%. Upon death you leave a stone husk behind which shatters after $340454d, inflicting $s2% of your maximum health in Physical damage split among nearby enemies, and healing for $s3% of your maximum health split among allies within $340542A1 yds.
-Variables        : $health=${40}
+Variables        : $health=${40}
+
 $reduction=${10}
 
 Name             : Emeni's Ambulatory Flesh (id=341650) [Passive, Hidden] 
@@ -2159,8 +2183,10 @@ Effects          :
                    Base Value: 30 | Scaled Value: 30 | PvP Coefficient: 1.00000 | Target: Self (1)
 #4 (id=882072)   : Apply Aura (6) | Dummy (4)
                    Base Value: 2 | Scaled Value: 2 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : When you damage an enemy that's below $s1% health, $s2% of the damage done is repeated over 5 sec. 
-
+Description      : When you damage an enemy that's below $s1% health, $s2% of the damage done is repeated over 5 sec. 
+
+
+
 Healing an ally grants them the ability to have their damage repeat this way at $s3% effectiveness for 5 sec. Limit $s4.
 
 Name             : Sole Slough (id=351089) [Passive, Hidden] 
@@ -2226,7 +2252,8 @@ Effects          :
 #1 (id=881163)   : Apply Aura (6) | Dummy (4)
                    Base Value: 2 | Scaled Value: 2 | PvP Coefficient: 1.00000 | Target: Self (1)
 Description      : Fleshcraft covers you in 3 pustules per 1 sec channeled. Taking damage or being healed pops a pustule, dealing $<pointsB> Nature damage to nearby enemies and healing nearby allies for $<pointsA> split between them.
-Variables        : $pointsA=${$cond($gt($SP,$AP),$SP*0.48,$AP*0.48)}
+Variables        : $pointsA=${$cond($gt($SP,$AP),$SP*0.48,$AP*0.48)}
+
 $pointsB=${$cond($gt($SP,$AP),$SP*0.72,$AP*0.72)*(1+$@versadmg)}
 
 Name             : Better Together (id=351146) [Passive, Hidden] 
@@ -2245,8 +2272,10 @@ Attributes       : ......xx x....... .......x x..x.x..   .....x.. ..x..... .....
 Effects          :
 #1 (id=881244)   : Apply Aura (6) | Dummy (4)
                    Base Value: 3 | Scaled Value: 3 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : During combat, moving within $s1 yd of a party or raid member inspires both of you, increasing Mastery by $352498s1 for $352498d.
-
+Description      : During combat, moving within $s1 yd of a party or raid member inspires both of you, increasing Mastery by $352498s1 for $352498d.
+
+
+
 Players may only be affected by one such effect.
 
 Name             : Path of the Devoted (id=351147) [Passive, Hidden] 
@@ -2268,8 +2297,10 @@ Attributes       : ......xx x....... .......x x..x.x..   .....x.. ..x..... .....
 Effects          :
 #1 (id=881245)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : After recovering from a loss of control effect, you take $352875s1% reduced damage and your movement speed cannot be reduced below $352875s2% for $352875d.
-
+Description      : After recovering from a loss of control effect, you take $352875s1% reduced damage and your movement speed cannot be reduced below $352875s2% for $352875d.
+
+
+
 May only occur once per $352876d.
 
 Name             : Newfound Resolve (id=351149) [Passive, Hidden] 
@@ -2410,10 +2441,14 @@ Effects          :
                    Base Value: 3 | Scaled Value: 3 | PvP Coefficient: 1.00000 | Target: Self (1)
 #3 (id=882244)   : Apply Aura (6) | Dummy (4)
                    Base Value: 10 | Scaled Value: 10 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Speak with Theotar in Sinfall to obtain The Mad Duke's Tea.
-
-Drinking The Mad Duke's Tea increases your Haste, Versatility, Critical Strike Chance, or $pri for $354018d.
-
+Description      : Speak with Theotar in Sinfall to obtain The Mad Duke's Tea.
+
+
+
+Drinking The Mad Duke's Tea increases your Haste, Versatility, Critical Strike Chance, or $pri for $354018d.
+
+
+
 You can only have the effects of one of The Mad Duke's Tea at a time.
 
 Name             : Viscous Trail (id=352108) [Passive, Hidden] 
@@ -2437,8 +2472,10 @@ Attributes       : ......xx x....... .......x x..x.x..   .....x.. ..x..... .....
 Effects          :
 #1 (id=882822)   : Apply Aura (6) | Proc Trigger Spell (42): Viscous Trail
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Trigger Spell: 352427 | Target: Self (1)
-Description      : When struck by a snare, you drop a puddle that lasts for $352427d. Enemies that step in the puddle are slowed by $352448m1% for $352448d.
-
+Description      : When struck by a snare, you drop a puddle that lasts for $352427d. Enemies that step in the puddle are slowed by $352448m1% for $352448d.
+
+
+
 May only occur once every $proccooldown sec.
 
 Name             : Undulating Maneuvers (id=352109) [Passive, Hidden] 
@@ -2490,7 +2527,8 @@ Effects          :
 #2 (id=884364)   : Dummy (3)
                    Base Value: 20 | Scaled Value: 20 | PvP Coefficient: 1.00000 | Target: Self (1)
 Description      : $?a137005[Abomination Limb]?a212611[Fodder to the Flame]?a137009[Adaptive Swarm]?a137014[Death Chakram]?a137018[Deathborne]?a137022[Bonedust Brew]?a137026[Vanquisher's Hammer]?a137030[Unholy Nova]?a137034[Serrated Bone Spike]?a137038[Primordial Wave]?a137042[Decimating Bolt]?a137047[Conqueror's Banner][Activating your Necrolord class ability] summons Kevin's Oozeling to fight alongside you for ${$s2*$<mod>}.1 sec. His attacks cause your enemies to take $352528s1% additional damage from you and he periodically grants your allies an absorb shield that absorbs $<shield> damage.
-Variables        : $shield=${$max($SP,$AP)*.1*(1+$@versadmg)}
+Variables        : $shield=${$max($SP,$AP)*.1*(1+$@versadmg)}
+
 $mod=$?a137005[${2}]?a212611[${2}]?a137009[${.4}.1]?a137014[${.75}.1]?a137018[${3}]?a137022[${1}]?a137026[${.5}]?a137030[${1.0}]?a137034[${.5}]?a137038[${.75}.1]?a137042[${.75}.1]?a137047[${2}][${1.0}]
 
 Name             : Soulglow Spectrometer (id=352186) [Passive, Hidden] 
@@ -2512,8 +2550,10 @@ Attributes       : ......xx x....... .......x x..x.x..   .....x.. ..x..... .....
 Effects          :
 #1 (id=882931)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : Damaging or healing a target analyzes its merit over $352940d, increasing your damage or healing to it by $352939s1%, increasing by an additional $352939s1% every $352939t4 sec.
-
+Description      : Damaging or healing a target analyzes its merit over $352940d, increasing your damage or healing to it by $352939s1%, increasing by an additional $352939s1% every $352939t4 sec.
+
+
+
 Cannot start a new analysis of each type until the previous one has finished.
 
 Name             : Reactive Retrofitting (id=352187) [Passive, Hidden] 
@@ -2535,8 +2575,10 @@ Attributes       : ......xx x....... .......x x..x.x..   .....x.. ..x..... .....
 Effects          :
 #1 (id=882932)   : Apply Aura (6) | Dummy (4)
                    Base Value: 6 | Scaled Value: 6 | PvP Coefficient: 0.50000 | Target: Self (1)
-Description      : After taking Physical or Magic damage, gain a shield that absorbs damage equal to $s1% of your maximum Health for $352789d.
-
+Description      : After taking Physical or Magic damage, gain a shield that absorbs damage equal to $s1% of your maximum Health for $352789d.
+
+
+
 Each incoming damage type may trigger this effect once per $352791d.
 
 Name             : Effusive Anima Accelerator (id=352188) [Passive, Hidden] 
@@ -2556,12 +2598,17 @@ Attributes       : ......xx x....... .......x x..x.x..   .....x.. ........ .....
 Effects          :
 #1 (id=882933)   : Apply Aura (6) | Dummy (4)
                    Base Value: 0 | Scaled Value: 0 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : $?a137005[Shackle the Unworthy]?a212611[Elysian Decree]?a137009[Kindred Spirits]?a137014[Resonating Arrow]?a137018[Radiant Spark]?a137022[Weapons of Order]?a137026[Divine Toll]?a137030[Boon of the Ascended]?a137034[Echoing Reprimand]?a137038[Vesper Totem]?a137042[Scouring Tithe]?a137047[Spear of Bastion][Activating your Kyrian class ability] releases a blast of overcharged anima at your target's location, dealing $<final> Arcane damage split evenly between all targets over $353248d.
-
+Description      : $?a137005[Shackle the Unworthy]?a212611[Elysian Decree]?a137009[Kindred Spirits]?a137014[Resonating Arrow]?a137018[Radiant Spark]?a137022[Weapons of Order]?a137026[Divine Toll]?a137030[Boon of the Ascended]?a137034[Echoing Reprimand]?a137038[Vesper Totem]?a137042[Scouring Tithe]?a137047[Spear of Bastion][Activating your Kyrian class ability] releases a blast of overcharged anima at your target's location, dealing $<final> Arcane damage split evenly between all targets over $353248d.
+
+
+
 Reduce the cooldown of $?a137005[Shackle the Unworthy]?a212611[Elysian Decree]?a137009[Kindred Spirits]?a137014[Resonating Arrow]?a137018[Radiant Spark]?a137022[Weapons of Order]?a137026[Divine Toll]?a137030[Boon of the Ascended]?a137034[Echoing Reprimand]?a137038[Vesper Totem]?a137042[Scouring Tithe]?a137047[Spear of Bastion][your Kyrian class ability] by ${$<cd>} sec per affected enemy, to a maximum of ${$<cd>*5} sec.
-Variables        : $mod=$?a137005[${1}]?a212611[${1}]?a137009[${1}]?a137014[${1}]?a137018[${0.5}]?a137022[${2}]?a137026[${1}]?a137030[${3}]?a137034[${0.75}]?a137038[${1}]?a137042[${0.4}]?a137047[${1}][${1}]
-$points=${$353248s2/100*$max($AP,$SP)*(1+$@versadmg)}
-$final=${$<mod>*$<points>*($353248d/$353248t1+1)}
+Variables        : $mod=$?a137005[${1}]?a212611[${1}]?a137009[${1}]?a137014[${1}]?a137018[${0.5}]?a137022[${2}]?a137026[${1}]?a137030[${3}]?a137034[${0.75}]?a137038[${1}]?a137042[${0.4}]?a137047[${1}][${1}]
+
+$points=${$353248s2/100*$max($AP,$SP)*(1+$@versadmg)}
+
+$final=${$<mod>*$<points>*($353248d/$353248t1+1)}
+
 $cd=$?a137005[${4}]?a212611[${4}]?a137009[${4}]?a137014[${4}]?a137018[${2}]?a137022[${8}]?a137026[${4}]?a137030[${12}]?a137034[${3}]?a137038[${4}]?a137042[${3}]?a137047[${4}][${4}]
 
 Name             : Regenerative Stone Skin (id=352365) [Passive, Hidden] 
@@ -2717,8 +2764,10 @@ Attributes       : ......xx x....... .......x x..x.x..   .....x.. ..x..... .....
 Effects          :
 #1 (id=883480)   : Apply Aura (6) | Proc Trigger Spell (42): Called Shot
                    Base Value: 5 | Scaled Value: 5 | PvP Coefficient: 1.00000 | Trigger Spell: 352865 | Target: Self (1)
-Description      : When you critically strike, you gain $352865s1% movement speed for $352865d.
-
+Description      : When you critically strike, you gain $352865s1% movement speed for $352865d.
+
+
+
 May only occur once every $proccooldown sec.
 
 Name             : Survivor's Rally (id=352502) [Passive, Hidden] 
@@ -2743,8 +2792,10 @@ Effects          :
                    Base Value: 50 | Scaled Value: 50 | PvP Coefficient: 1.00000 | Trigger Spell: 352857 | Target: Self (1)
 #2 (id=884201)   : Apply Aura (6) | Dummy (4)
                    Base Value: 60 | Scaled Value: 60 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : When you fall below $s1% health, you regain ${$352857s1*$352857d}% of your health over $352857d and receive $352857s2% additional healing from other spells and abilities.
-
+Description      : When you fall below $s1% health, you regain ${$352857s1*$352857d}% of your health over $352857d and receive $352857s2% additional healing from other spells and abilities.
+
+
+
 May only occur once every $s2 sec.
 
 Name             : Bonded Hearts (id=352503) [Passive, Hidden] 
@@ -2788,8 +2839,10 @@ Effects          :
                    Base Value: 20 | Scaled Value: 20 | PvP Coefficient: 0.50000 | Target: Self (1)
 #2 (id=885276)   : Apply Aura (6) | Dummy (4)
                    Base Value: 80 | Scaled Value: 80 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : When you take damage below $s2% health, you gain a shield for $s1% of your maximum health for $353477d.
-
+Description      : When you take damage below $s2% health, you gain a shield for $s1% of your maximum health for $353477d.
+
+
+
 This can only occur once every $358122d.
 
 Name             : Cunning Dreams (id=352782) [Passive, Hidden] 
@@ -2880,8 +2933,10 @@ Effects          :
                    Base Value: 35 | Scaled Value: 35 | PvP Coefficient: 1.00000 | Target: Self (1)
 #3 (id=885066)   : Apply Aura (6) | Dummy (4)
                    Base Value: 75 | Scaled Value: 75 | PvP Coefficient: 1.00000 | Target: Self (1)
-Description      : When your damage or healing is enhanced by Wild Hunt Tactics, gain Wild Hunt Strategem for $353286d. 
-
+Description      : When your damage or healing is enhanced by Wild Hunt Tactics, gain Wild Hunt Strategem for $353286d. 
+
+
+
 The next time you damage an enemy who is below $s2% health, or heal an ally who is above $s3% health, Wild Hunt Strategem is activated to increase your damage and healing to such targets by $353254m1% for $353254d.
 
 Name             : Hunt's Exhilaration (id=352806) [Passive, Hidden] 
